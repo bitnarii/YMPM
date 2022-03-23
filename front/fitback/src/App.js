@@ -12,6 +12,7 @@ import Register from "./component/page/Register";
 import Search from "./component/page/Search";
 import SearchResult from "./component/page/SearchResult";
 import UserEdit from "./component/page/UserEdit";
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 function App() {
     return (
