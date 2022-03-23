@@ -1,8 +1,13 @@
 import "./App.css";
+import AddDailylook from "./component/page/AddDailylook";
 import BookmarkList from "./component/page/BookmarkList";
 import Closet from "./component/page/Closet";
 import ClosetList from "./component/page/ClosetList";
+import Dailylook from "./component/page/Dailylook";
+import EditDailylook from "./component/page/EditDailylook";
+import Home from "./component/page/Home";
 import Login from "./component/page/Login";
+import Opinion from "./component/page/Opinion";
 import Register from "./component/page/Register";
 import Search from "./component/page/Search";
 import SearchResult from "./component/page/SearchResult";
