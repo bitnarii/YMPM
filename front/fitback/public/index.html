@@ -1,43 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link
+            href="resources/css/axure_rp_page.css"
+            type="text/css"
+            rel="stylesheet"
+        />
+        <link href="data/styles.css" type="text/css" rel="stylesheet" />
+        <!-- 효원 옷장 -->
+        <link href="files/closet/styles.css" type="text/css" rel="stylesheet" />
+        <link
+            href="files/closetlist/styles.css"
+            type="text/css"
+            rel="stylesheet"
+        />
+        <script type="text/babel">
+            $axure.utils.getTransparentGifPath = function () {
+                return "resources/images/transparent.gif";
+            };
+            $axure.utils.getOtherPath = function () {
+                return "resources/Other.html";
+            };
+            $axure.utils.getReloadPath = function () {
+                return "resources/reload.html";
+            };
+        </script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="resources/scripts/jquery-3.2.1.min.js"></script>
+        <script src="resources/scripts/axure/axQuery.js"></script>
+        <script src="resources/scripts/axure/globals.js"></script>
+        <script src="resources/scripts/axutils.js"></script>
+        <script src="resources/scripts/axure/annotation.js"></script>
+        <script src="resources/scripts/axure/axQuery.std.js"></script>
+        <script src="resources/scripts/axure/doc.js"></script>
+        <script src="resources/scripts/messagecenter.js"></script>
+        <script src="resources/scripts/axure/events.js"></script>
+        <script src="resources/scripts/axure/recording.js"></script>
+        <script src="resources/scripts/axure/action.js"></script>
+        <script src="resources/scripts/axure/expr.js"></script>
+        <script src="resources/scripts/axure/geometry.js"></script>
+        <script src="resources/scripts/axure/flyout.js"></script>
+        <script src="resources/scripts/axure/model.js"></script>
+        <script src="resources/scripts/axure/repeater.js"></script>
+        <script src="resources/scripts/axure/sto.js"></script>
+        <script src="resources/scripts/axure/utils.temp.js"></script>
+        <script src="resources/scripts/axure/variables.js"></script>
+        <script src="resources/scripts/axure/drag.js"></script>
+        <script src="resources/scripts/axure/move.js"></script>
+        <script src="resources/scripts/axure/visibility.js"></script>
+        <script src="resources/scripts/axure/style.js"></script>
+        <script src="resources/scripts/axure/adaptive.js"></script>
+        <script src="resources/scripts/axure/tree.js"></script>
+        <script src="resources/scripts/axure/init.temp.js"></script>
+        <script src="resources/scripts/axure/legacy.js"></script>
+        <script src="resources/scripts/axure/viewer.js"></script>
+        <script src="resources/scripts/axure/math.js"></script>
+        <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
+        <script src="resources/scripts/axure/ios.js"></script>
+        <script src="data/document.js"></script>
+        <!-- 효원 옷장 -->
+        <script src="files/closet/data.js"></script>
+        <script src="files/closetlist/data.js"></script>
+    </body>
 </html>
