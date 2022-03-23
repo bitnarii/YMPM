@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import EditCheck from "../../ui/EditOpinionUi/EditCheck";
 import EditItem from "../../ui/EditOpinionUi/EditItem";
 

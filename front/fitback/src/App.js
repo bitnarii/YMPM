@@ -12,7 +12,7 @@ import Register from "./component/page/Register";
 import Search from "./component/page/Search";
 import SearchResult from "./component/page/SearchResult";
 import UserEdit from "./component/page/UserEdit";
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
     return (
@@ -22,19 +22,18 @@ function App() {
                 <Route path="/closet" element={<Closet />} />
                 <Route path="/closetList" element={<ClosetList />} />
                 {/* 곽다은 (데일리룩, 댓글) */}
-                <Route path='/' element={<Home />}/>
-                <Route path='/addDailylook' element={<AddDailylook />} />
-                <Route path='/editDailylook' element={<EditDailylook />} />
-                <Route path='/dailylook' element={<Dailylook />} />
-                <Route path='/op' element={<Opinion />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/addDailylook" element={<AddDailylook />} />
+                <Route path="/editDailylook" element={<EditDailylook />} />
+                <Route path="/dailylook" element={<Dailylook />} />
+                <Route path="/op" element={<Opinion />} />
                 {/* 권빛나리 (회원관리, 북마크, 검색) */}
-                <Route path="/login" element={<Login/>} /> 
-                <Route path="/bookmarklist" element={<BookmarkList/>} /> 
-                <Route path="/register" element={<Register/>} /> 
-                <Route path="/search" element={<Search/>} /> 
-                <Route path="/searchresult" element={<SearchResult/>} /> 
-                <Route path="/useredit" element={<UserEdit/>} /> 
-
+                <Route path="/login" element={<Login />} />
+                <Route path="/bookmarklist" element={<BookmarkList />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/search" element={<Search />} />
+                <Route path="/searchresult" element={<SearchResult />} />
+                <Route path="/useredit" element={<UserEdit />} />
             </Routes>
         </BrowserRouter>
     );

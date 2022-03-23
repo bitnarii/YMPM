@@ -1,9 +1,7 @@
-import react from "react";
-import DayBody from "../../ui/dailylookUi/DayBody";
-import DayClothInfo from "../../ui/dailylookUi/DayClothInfo";
-import DayItem from "../../ui/dailylookUi/DayItem";
+import React from 'react';
+import DayClothInfo from "../ui/dailylookUi/DayClothInfo";
+import DayItem from "../ui/dailylookUi/DayItem";
 import DayOpinion from "../ui/dailylookUi/DayOpinion";
-
 
 function Dailylook() {
     return ( 

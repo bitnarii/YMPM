@@ -1,9 +1,9 @@
 import React from "react";
-import AddBody from "../../ui/addDailylookUi/AddBody";
-import Closet from "../../ui/addDailylookUi/Closet";
-import ClothInfo from "../../ui/addDailylookUi/ClothInfo";
-import ItemInsert from "../../ui/addDailylookUi/ItemInsert";
-import Items from "../../ui/addDailylookUi/Items";
+import AddBody from "../ui/addDailylookUi/AddBody";
+import Closet from "../ui/addDailylookUi/Closet";
+import ClothInfo from "../ui/addDailylookUi/ClothInfo";
+import ItemInsert from "../ui/addDailylookUi/ItemInsert";
+import Items from "../ui/addDailylookUi/Items";
 
 
 

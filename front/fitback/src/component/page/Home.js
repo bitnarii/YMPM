@@ -1,10 +1,10 @@
 import React from "react";
-import Bookmark from "../../ui/homeUi/Bookmark";
-import Calender from "../../ui/homeUi/Calender";
-import CommentIwrote from "../../ui/homeUi/CommentIwrote";
-import CommentOnMe from "../../ui/homeUi/CommentOnMe";
-import ThumbCloset from "../../ui/homeUi/ThumbCloset";
-import ThumbLook from "../../ui/homeUi/ThumbLook";
+import Bookmark from "../ui/homeUi/Bookmark";
+import Calender from "../ui/homeUi/Calender";
+import CommentIwrote from "../ui/homeUi/CommentIwrote";
+import CommentOnMe from "../ui/homeUi/CommentOnMe";
+import ThumbCloset from "../ui/homeUi/ThumbCloset";
+import ThumbLook from "../ui/homeUi/ThumbLook";
 
 
 function Home() {

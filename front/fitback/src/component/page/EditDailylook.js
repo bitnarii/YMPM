@@ -1,9 +1,9 @@
-import react from "react";
-import Closet from "../../ui/addDailylookUi/Closet";
-import Items from "../../ui/addDailylookUi/Items";
-import EditBody from "../../ui/editDailylookUi/EditBody";
-import EditClothInfo from "../../ui/editDailylookUi/EditClothInfo";
-import EditItemInsert from "../../ui/editDailylookUi/EditItemInsert";
+import React from "react";
+import Closet from "../ui/addDailylookUi/Closet";
+import Items from "../ui/addDailylookUi/Items";
+import EditBody from "../ui/editDailylookUi/EditBody";
+import EditClothInfo from "../ui/editDailylookUi/EditClothInfo";
+import EditItemInsert from "../ui/editDailylookUi/EditItemInsert";
 
 
 function EditDailylook() {

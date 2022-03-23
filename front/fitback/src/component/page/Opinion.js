@@ -1,6 +1,6 @@
-import react from "react";
-import OpinionCheck from "../../ui/OpinionUi/OpinionCheck";
-import OpinionItem from "../../ui/OpinionUi/OpnionItem";
+import React from 'react';
+import OpinionCheck from "../ui/OpinionUi/OpinionCheck";
+import OpinionItem from "../ui/OpinionUi/OpnionItem";
 
 function Opinion() {
     return ( 

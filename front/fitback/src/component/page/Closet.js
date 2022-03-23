@@ -1,7 +1,7 @@
 import React from "react";
-import AllItems from "../homeUi/AllItems";
-import ChooseCloset from "../homeUi/ChooseCloset";
-import ClosetTable from "../homeUi/ClosetTable";
+import AllItems from "../ui/ClosetUi/AllItems";
+import ChooseCloset from "../ui/ClosetUi/ChooseCloset"
+import ClosetTable from "../ui/ClosetUi/ClosetTable";
 
 const Closet = () => {
     return (
