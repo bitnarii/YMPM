@@ -1,6 +1,7 @@
 import React from "react";
-import AddCheck from "../../ui/AddOpinionUi/AddCheck";
-import AddItem from "../../ui/AddOpinionUi/AddItem";
+import AddCheck from "../ui/AddOpinionUi/AddCheck";
+import AddItem from "../ui/AddOpinionUi/AddItem";
+
 
 function AddOpinion() {
     return ( 
