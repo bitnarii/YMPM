@@ -1,7 +1,7 @@
-package com.fitback.ympm.dailyLook.service;
+package com.fitback.personal.dailyLook.service;
 
-import com.fitback.ympm.dailyLook.model.DailyLook;
-import com.fitback.ympm.dailyLook.repository.DailyLookRepository;
+import com.fitback.personal.dailyLook.model.DailyLook;
+import com.fitback.personal.dailyLook.repository.DailyLookRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

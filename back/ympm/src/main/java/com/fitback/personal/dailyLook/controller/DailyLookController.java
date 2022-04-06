@@ -1,8 +1,8 @@
-package com.fitback.ympm.dailyLook.controller;
+package com.fitback.personal.dailyLook.controller;
 
-import com.fitback.ympm.common.MessageVO;
-import com.fitback.ympm.dailyLook.model.DailyLook;
-import com.fitback.ympm.dailyLook.service.DailyLookService;
+import com.fitback.personal.common.MessageVO;
+import com.fitback.personal.dailyLook.model.DailyLook;
+import com.fitback.personal.dailyLook.service.DailyLookService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

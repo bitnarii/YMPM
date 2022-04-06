@@ -1,7 +1,7 @@
-package com.fitback.ympm.dailyLook.model;
+package com.fitback.personal.dailyLook.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fitback.ympm.opinion.model.Opinion;
+import com.fitback.personal.opinion.model.Opinion;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

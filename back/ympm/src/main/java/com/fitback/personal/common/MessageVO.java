@@ -1,4 +1,4 @@
-package com.fitback.ympm.common;
+package com.fitback.personal.common;
 
 import org.springframework.stereotype.Component;
 import java.util.Hashtable;

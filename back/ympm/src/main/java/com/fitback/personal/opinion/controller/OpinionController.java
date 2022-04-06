@@ -1,8 +1,8 @@
-package com.fitback.ympm.opinion.controller;
+package com.fitback.personal.opinion.controller;
 
-import com.fitback.ympm.common.MessageVO;
-import com.fitback.ympm.opinion.model.Opinion;
-import com.fitback.ympm.opinion.service.OpinionService;
+import com.fitback.personal.common.MessageVO;
+import com.fitback.personal.opinion.model.Opinion;
+import com.fitback.personal.opinion.service.OpinionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

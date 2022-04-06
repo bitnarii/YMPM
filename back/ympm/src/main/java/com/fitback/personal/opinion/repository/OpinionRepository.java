@@ -1,6 +1,6 @@
-package com.fitback.ympm.opinion.repository;
+package com.fitback.personal.opinion.repository;
 
-import com.fitback.ympm.opinion.model.Opinion;
+import com.fitback.personal.opinion.model.Opinion;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

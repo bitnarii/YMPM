@@ -1,7 +1,7 @@
-package com.fitback.ympm.opinion.service;
+package com.fitback.personal.opinion.service;
 
-import com.fitback.ympm.opinion.model.Opinion;
-import com.fitback.ympm.opinion.repository.OpinionRepository;
+import com.fitback.personal.opinion.model.Opinion;
+import com.fitback.personal.opinion.repository.OpinionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

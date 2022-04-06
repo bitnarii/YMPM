@@ -1,6 +1,6 @@
-package com.fitback.ympm.opinion.model;
+package com.fitback.personal.opinion.model;
 
-import com.fitback.ympm.dailyLook.model.DailyLook;
+import com.fitback.personal.dailyLook.model.DailyLook;
 import com.sun.istack.NotNull;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
