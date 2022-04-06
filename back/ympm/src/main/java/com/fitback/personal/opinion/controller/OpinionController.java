@@ -2,7 +2,7 @@ package com.fitback.personal.opinion.controller;
 
 import com.fitback.personal.common.MessageVO;
 import com.fitback.personal.opinion.model.Opinion;
-import com.fitback.personal.opinion.service.OpinionService;
+import com.fitback.personal.opinion.service.OpinionServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +17,7 @@ import java.util.List;
 public class OpinionController {
 
     @Autowired
-    private final OpinionService opinionService;
+    private final OpinionServiceImpl opinionService;
 
     @PostMapping("/opinion/add")
     public MessageVO addOpinion(Opinion opinion, MultipartFile opiFile) throws Exception{

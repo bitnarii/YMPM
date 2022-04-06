@@ -2,7 +2,7 @@ package com.fitback.personal.dailyLook.controller;
 
 import com.fitback.personal.common.MessageVO;
 import com.fitback.personal.dailyLook.model.DailyLook;
-import com.fitback.personal.dailyLook.service.DailyLookService;
+import com.fitback.personal.dailyLook.service.DailyLookServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -20,7 +20,7 @@ import java.util.List;
 @Slf4j
 public class DailyLookController {
 
-    private final DailyLookService dailyLookService;
+    private final DailyLookServiceImpl dailyLookService;
 
     @PostMapping("/dailyLook/add")
     @ResponseStatus(HttpStatus.CREATED)
