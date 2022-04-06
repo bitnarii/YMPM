@@ -1,19 +1,20 @@
 package com.fitback.personal.opinion.controller;
 
 import com.fitback.personal.common.MessageVO;
-import com.fitback.personal.opinion.model.Opinion;
 import com.fitback.personal.opinion.service.OpinionServiceImpl;
+import com.fitback.personal.opinion.model.Opinion;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api")
+@RequestMapping
 public class OpinionController {
 
     @Autowired
@@ -41,18 +42,18 @@ public class OpinionController {
         return result;
     }
 
-    @GetMapping("/opinion/find/{id}")
-    public Opinion getOpinion(Long id){
+    @GetMapping("/opinion/list/{id}")
+    public Optional<Opinion> getOpinion(@PathVariable Long id){
         return opinionService.opinionView(id);
     }
 
-    @GetMapping("/opinion/findAll")
+    @GetMapping("/opinion/list")
     public List<Opinion> getAllOpinion(){
         return opinionService.opinionList();
     }
 
-    @DeleteMapping("/opinion/delete/{id}")
-    public void opinionDelete(@ModelAttribute Opinion opinion){
-        opinionService.opinionDelete(opinion);
+    @DeleteMapping("/opinion/remove/{id}")
+    public void opinionDelete(@PathVariable Long id){
+        opinionService.opinionDelete(id);
     }
 }

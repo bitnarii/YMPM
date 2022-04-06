@@ -1,7 +1,6 @@
 package com.fitback.personal.dailyLook.service;
 
 import com.fitback.personal.dailyLook.model.DailyLook;
-import com.fitback.personal.opinion.model.Opinion;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.multipart.MultipartFile;

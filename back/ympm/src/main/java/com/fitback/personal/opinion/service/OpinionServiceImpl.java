@@ -1,7 +1,7 @@
 package com.fitback.personal.opinion.service;
 
-import com.fitback.personal.opinion.model.Opinion;
 import com.fitback.personal.opinion.repository.OpinionRepository;
+import com.fitback.personal.opinion.model.Opinion;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -46,17 +47,18 @@ public class OpinionServiceImpl implements OpinionService{
     }
 
     @Override
-    public Opinion opinionView(Long id){
-        return opinionRepository.findById(id).get();
+    public Optional<Opinion> opinionView(Long id){
+        return opinionRepository.findById(id);
     }
 
+    @Override
     public List<Opinion> opinionList(){
         return opinionRepository.findAll();
     }
 
     @Override
-    public void opinionDelete(Opinion opinion){
-        opinionRepository.delete(opinion);
+    public void opinionDelete(Long id){
+        opinionRepository.deleteById(id);
     }
 
 }
