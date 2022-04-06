@@ -1,0 +1,22 @@
+package com.fitback.personal.closet.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Closet extends BaseTime {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String closetName;
+    private String closetIcon;
+    private String closetDescription;
+
+}
