@@ -2,7 +2,7 @@ package com.fitback.personal.dailyLook.controller;
 
 import com.fitback.personal.common.MessageVO;
 import com.fitback.personal.dailyLook.model.DailyLook;
-import com.fitback.personal.dailyLook.service.DailyLookService;
+import com.fitback.personal.dailyLook.service.DailyLookServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -16,11 +16,11 @@ import java.util.List;
 @CrossOrigin
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api")
+@RequestMapping
 @Slf4j
 public class DailyLookController {
 
-    private final DailyLookService dailyLookService;
+    private final DailyLookServiceImpl dailyLookService;
 
     @PostMapping("/dailyLook/add")
     @ResponseStatus(HttpStatus.CREATED)
@@ -49,7 +49,7 @@ public class DailyLookController {
         return dailyLookService.dailyLookView(id);  //데일리룩 서비스에서 고유 아이디를 통해 하나의 데일리룩(상세페이지)을 불러옴
     }
 
-    @GetMapping("/dailyLook/getAll")
+    @GetMapping("/dailyLook/list")
     public List<DailyLook> getAllDailyLook(Model model){
 
         model.addAttribute("list", dailyLookService.dailyLookList()); //전체 데일리룩 불러오기
@@ -57,7 +57,7 @@ public class DailyLookController {
         return dailyLookService.dailyLookList();
     }
 
-    @DeleteMapping("/dailyLook/delete/{id}")
+    @DeleteMapping("/dailyLook/remove/{id}")
     public void deleteDailyLook(@PathVariable Long id){
         dailyLookService.deleteByDailyLookId(id); //데일리룩 서비스의 아이디를 지정하여 해당 데일리룩을 삭제하는 메소드
     }
@@ -82,11 +82,4 @@ public class DailyLookController {
 
     }
 
-//    @GetMapping("/dailyLook/modify/{id}")
-//    public String editDailyLook(@PathVariable Long id, DailyLook dailyLook, Model model,MultipartFile file) throws Exception{
-//
-//        model.addAttribute("dailyLook", dailyLookService.dailyLookView(id));
-//
-//        return "redirect:api/dailyLook/getAll";
-//    }
 }
