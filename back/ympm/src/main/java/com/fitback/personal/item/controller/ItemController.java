@@ -1,5 +1,6 @@
 package com.fitback.personal.item.controller;
 
+import com.fitback.personal.item.model.AddItemVo;
 import com.fitback.personal.item.model.Item;
 import com.fitback.personal.item.service.ItemService;
 import lombok.RequiredArgsConstructor;
@@ -21,13 +22,24 @@ public class ItemController {
     private final ItemService itemService;
 
     @PostMapping("/add")
-    public Item addItem(@RequestBody Item item) {
-        return itemService.addItem(item);
+    public AddItemVo addItem(@RequestParam MultipartFile itemImg, Item item) throws Exception{
+        AddItemVo addItemVo = new AddItemVo();
+        Item result = itemService.addItem(itemImg, item);
+        addItemVo.put("result", result);
+        addItemVo.put("searchUrl", "/item/getAll");
+//        addItemVo.put("item", item);
+        return addItemVo;
     }
 
     @PutMapping("/edit/{id}")
-    public Item editByIdItem(@PathVariable Long id, @RequestBody Item item) {
-        return itemService.editByIdItem(item);
+    public AddItemVo editByIdItem(@PathVariable Long id, @RequestParam MultipartFile itemImg, Item item) throws Exception{
+        //postman으로 입력했을 때 생성일 안 뜨는 게 당연함. 조회시 볼 수 있음
+        AddItemVo addItemVo = new AddItemVo();
+        Item result = itemService.addItem(itemImg, item);
+        addItemVo.put("result", result);
+        addItemVo.put("searchUrl", "/item/getAll");
+//        addItemVo.put("item", item);
+        return addItemVo;
     }
 
     @GetMapping("/getAll")
@@ -43,28 +55,5 @@ public class ItemController {
     @DeleteMapping("/delete/{id}")
     void deleteByIdItem(@PathVariable Long id) {
         itemService.deleteByIdItem(id);
-    }
-
-    @PostMapping("/img")
-    public List<String> uploadImg(@RequestParam List<MultipartFile> itemImg) throws Exception {
-        //Exception 던져야 transferTo 구현 가능
-
-        List<String> list = new ArrayList<>();
-        for (MultipartFile file : itemImg) {
-            // 파일 원본명 가져오기
-            String fileName  = file.getOriginalFilename();
-            //파일이 업로드 될 경로 설정
-            File fileAddr = new File("C:/Users/admin/Documents/myFitBack_imgFile/" + fileName);
-            //경로 없을 시 생성 (상대 경로 생성 방법 모르겠어서 일단 이렇게 유지 ㅠㅠ)
-            if ( ! fileAddr.exists()) {
-                // (밑에 건 경고무시문?) mkdir 에 경고문 떠서 아래 문구 추가하니 사라짐
-                //noinspection ResultOfMethodCallIgnored
-                new File("C:/Users/admin/Documents/myFitBack_imgFile").mkdir();
-            }
-
-            //파일 저장
-            file.transferTo(fileAddr);
-        }
-        return list;
     }
 }
