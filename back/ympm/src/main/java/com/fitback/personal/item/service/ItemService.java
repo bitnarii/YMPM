@@ -12,6 +12,7 @@ public interface ItemService {
 //    Item editByIdItem(Item item);
     List<Item> getAllItem();
     Optional<Item> getByIdItem(Long id);
+    List<Item> getByCategoryItem(String itemCategory);
     void deleteByIdItem(Long id);
 //    public List<String> uploadImg(@RequestParam List<MultipartFile> itemImg) throws Exception;
 }

@@ -28,7 +28,8 @@ public class Item {
     private String itemBrand;
     private String itemMemo;
 
-//    private String itemImgPath;
+    private String itemImgPath;
+    private String itemImgOrigin;
     private String itemImgName;
 
     @CreatedDate

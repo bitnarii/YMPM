@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.util.*;
+import java.util.stream.Stream;
 
 
 @CrossOrigin
@@ -26,8 +27,6 @@ public class ItemController {
         AddItemVo addItemVo = new AddItemVo();
         Item result = itemService.addItem(itemImg, item);
         addItemVo.put("result", result);
-        addItemVo.put("searchUrl", "/item/getAll");
-//        addItemVo.put("item", item);
         return addItemVo;
     }
 
@@ -37,8 +36,6 @@ public class ItemController {
         AddItemVo addItemVo = new AddItemVo();
         Item result = itemService.addItem(itemImg, item);
         addItemVo.put("result", result);
-        addItemVo.put("searchUrl", "/item/getAll");
-//        addItemVo.put("item", item);
         return addItemVo;
     }
 
@@ -50,6 +47,17 @@ public class ItemController {
     @GetMapping("/get/{id}")
     public Optional<Item> getByIdItem(@PathVariable Long id) {
         return itemService.getByIdItem(id);
+    }
+
+    @GetMapping("/getImg/{id}")
+    public String getByIdItemImg(@PathVariable Long id){
+        Item itemVo = itemService.getByIdItem(id).get();
+        return itemVo.getItemImgPath();
+    }
+
+    @GetMapping("/getImgCat/{itemCategory}")
+    public List<Item> getByCategoryItemImg(@PathVariable String itemCategory) {
+        return itemService.getByCategoryItem(itemCategory);
     }
 
     @DeleteMapping("/delete/{id}")

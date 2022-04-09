@@ -4,6 +4,7 @@ import com.fitback.personal.item.model.Item;
 import com.fitback.personal.item.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,18 +23,31 @@ public class ItemServiceImpl implements ItemService{
     @Autowired
     private final ItemRepository itemRepository;
 
+    @Value("${fitback.image.path}")
+    String imgPath;
+
+    @Value("${fitback.image.context}")
+    String imgContext;
+
     @Override
     @Transactional //begin, commit 자동 수행, 예외 발생 시 rollback 처리
     public Item addItem(MultipartFile itemImg, Item item) throws Exception{
         if(itemImg != null) {
-            String imgPath = System.getProperty("user.dir") + "/src/main/resources/static/files";
-            String imgName = /* UUID.randomUUID() + */ itemImg.getOriginalFilename();
-            File saveImg = new File(imgPath, imgName); //parent 디렉토리에 imgName 이름의 디렉토리나 파일 객체 생성
+
+            //savePath -> 고정경로
+            String rootPath = System.getProperty("user.dir");
+            String savePath = rootPath + File.separator + imgPath;
+            System.out.println("SAVEPATH : " + savePath);
+
+            String orgName = itemImg.getOriginalFilename();
+            String fileExt = (orgName != null) ? orgName.substring(orgName.lastIndexOf('.') + 1) : " " ;
+            String imgName = UUID.randomUUID() + "." + fileExt;
+            File saveImg = new File(savePath, imgName); //parent 디렉토리에 imgName 이름의 디렉토리나 파일 객체 생성
             //파일 저장
             itemImg.transferTo(saveImg);
-            item.setItemImgName(imgName);
-//            item.setItemImgPath("/files/" + imgName);
-
+            item.setItemImgName(imgName); //서비스 파일명
+            item.setItemImgOrigin(orgName); //원본 파일명
+            item.setItemImgPath(imgContext + imgName); //전체 경로
         } else {
             System.out.println("item Image doesnt exist");
         }
@@ -51,6 +65,11 @@ public class ItemServiceImpl implements ItemService{
     public Optional<Item> getByIdItem(Long id) {
         //ItemInCloset 클래스에서 매핑할 때 Optional 기능이 필요해 (null problem) Optional 사용
         return itemRepository.findById(id);
+    }
+
+    @Override
+    public List<Item> getByCategoryItem(String itemCategory) {
+        return itemRepository.findByItemCategory(itemCategory);
     }
 
     @Override
