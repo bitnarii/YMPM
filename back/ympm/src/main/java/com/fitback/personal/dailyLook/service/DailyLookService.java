@@ -16,5 +16,6 @@ public interface DailyLookService {
     void deleteByDailyLookId(Long id);
     List<DailyLook> dailyLookList();
     List<DailyLookDto> searchPosts(String keyword);
+    DailyLook editDailyLook(DailyLook dailyLook);
 
 }

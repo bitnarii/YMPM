@@ -29,6 +29,8 @@ public class DailyLook {
     private String fileName;
     private String info;
     private String description;
+    private int bookmark;
+
 
     @OrderBy("desc") //댓글 작성 시, 최근 순으로 볼 수 있도록
     @JsonIgnoreProperties({"dailyLook"}) //무한 참조 방지

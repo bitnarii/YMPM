@@ -1,5 +1,6 @@
 package com.fitback.personal.dailyLook.controller;
 
+import com.fitback.personal.closet.model.Closet;
 import com.fitback.personal.common.MessageVO;
 import com.fitback.personal.dailyLook.dto.DailyLookDto;
 import com.fitback.personal.dailyLook.model.DailyLook;
@@ -89,4 +90,12 @@ public class DailyLookController {
         model.addAttribute("keyword", keyword);
         return dailyLookService.searchPosts(keyword);
     }
+
+    @PutMapping("dailyLook/put/{id}")
+    public DailyLook editDailyLook(@PathVariable Long id, @RequestBody DailyLook dailyLook){
+        return dailyLookService.editDailyLook(dailyLook);
+    }
+
+
+
 }

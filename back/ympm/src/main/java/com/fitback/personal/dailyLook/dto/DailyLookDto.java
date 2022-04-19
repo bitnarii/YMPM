@@ -24,6 +24,8 @@ public class DailyLookDto {
     private String fileName;
     private String info;
     private String description;
+    private int bookmark;
+
 
     @OrderBy("desc") //댓글 작성 시, 최근 순으로 볼 수 있도록
     @JsonIgnoreProperties({"dailyLook"}) //무한 참조 방지
@@ -34,7 +36,7 @@ public class DailyLookDto {
     private Timestamp createDate;
 
     @Builder
-    public DailyLookDto(Long id, String dailyLookName, String style, String filePath, String fileName, String info, String description, List<Opinion> opinions, Timestamp createDate) {
+    public DailyLookDto(Long id, String dailyLookName, String style, String filePath, String fileName, String info, String description, int bookmark, List<Opinion> opinions, Timestamp createDate) {
         this.id = id;
         this.dailyLookName = dailyLookName;
         this.style = style;
@@ -42,6 +44,7 @@ public class DailyLookDto {
         this.fileName = fileName;
         this.info = info;
         this.description = description;
+        this.bookmark = bookmark;
         this.opinions = opinions;
         this.createDate = createDate;
     }

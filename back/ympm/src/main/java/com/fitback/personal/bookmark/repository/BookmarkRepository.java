@@ -1,4 +1,8 @@
 package com.fitback.personal.bookmark.repository;
 
-public interface BookmarkRepository {
+import com.fitback.personal.bookmark.model.Bookmark;
+import org.apache.el.parser.JJTELParserState;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BookmarkRepository extends JpaRepository<Bookmark, Long> {
 }
