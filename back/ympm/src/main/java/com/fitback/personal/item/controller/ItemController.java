@@ -25,6 +25,9 @@ public class ItemController {
     @PostMapping("/add")
     public AddItemVo addItem(@RequestParam MultipartFile itemImg, Item item) throws Exception{
         AddItemVo addItemVo = new AddItemVo();
+        System.out.println("MULTI_PART:" + itemImg.getOriginalFilename());
+
+
         Item result = itemService.addItem(itemImg, item);
         addItemVo.put("result", result);
         return addItemVo;
