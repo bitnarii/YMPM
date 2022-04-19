@@ -2,7 +2,7 @@ import axios from "axios";
 import React,{useEffect, useState} from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from '@fullcalendar/daygrid';
-import '../../../../node_modules/@fullcalendar/common/main.css';
+import '../../../node_modules/@fullcalendar/common/main.css';
 import { Link } from "react-router-dom";
 
 

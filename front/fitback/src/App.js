@@ -10,7 +10,7 @@ import UserEdit from './component/page/UserEdit';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HotPost from './component/ui/searchUi/HotPost';
 import Home from './component/page/Home';
-import DailyLook from './component/page/DailyLook';
+import DailyLook from './component/page/Dailylook';
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
             <main>
               <Routes>  
                 <Route path="/" element={<Home/>} /> 
-                <Route path="/dailyLook" element={<DailyLook />} /> 
+                <Route path="/dailyLook" element={<DailyLook/>} /> 
                 <Route path="/login" element={<Login/>} /> 
                 <Route path="/bookmarklist" element={<BookmarkList/>} /> 
                 <Route path="/register" element={<Register/>} /> 
