@@ -19,7 +19,7 @@ function App() {
           <BrowserRouter>
             <main>
               <Routes>  
-                <Route path="/" element={<Login/>} /> 
+                <Route path="/login" element={<Login/>} /> 
                 <Route path="/bookmarklist" element={<BookmarkList/>} /> 
                 <Route path="/register" element={<Register/>} /> 
                 <Route path="/search" element={<HotPost/>} /> 
