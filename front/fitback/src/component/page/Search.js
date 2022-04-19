@@ -1,18 +1,22 @@
-import React from 'react';
-import HotPost from '../ui/searchUi/HotPost';
-import NewPost from '../ui/searchUi/NewPost';
-import SearchBar from '../ui/searchUi/SearchBar';
+// import React, {useState} from 'react';
+// import { Link } from 'react-router-dom';
+// import HotPost from '../ui/searchUi/HotPost';
+// import _ from 'lodash'
 
-function Search () {
-    return ( 
-        <div id="base" class="">
+
+// function Search () {
+
+
+//     return ( 
+
+//         <div id="base" class="">
+
           
-            <SearchBar/>
-            <NewPost/>
-            <HotPost/>
+                      
+//             <HotPost />
 
-         </div>
-    );
-}
+//         </div>
+//     );
+// }
 
-export default Search ;
+// export default Search ;

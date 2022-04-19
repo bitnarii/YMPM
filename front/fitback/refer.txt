@@ -1,0 +1,102 @@
+import React, { useEffect, useRef, useState } from "react";
+import { Form } from 'react-bootstrap';
+import axios from 'axios';
+
+function Admin2() {
+
+    const productUrl = "http://localhost:8080/api/product/add";
+    const productImageUrl = "http://localhost:8080/api/productImg/add";
+    const imageUrl = "http://localhost:8080/api/image/add";
+    const productName = useRef();
+    const price = useRef();
+    const productInfo = useRef();
+    const productImg = useRef();
+
+    const [productImage, setProductImage] = useState("");
+
+    const addProduct = (e) => {
+        e.preventDefault();
+        axios.post(productUrl, {
+            productName: productName.current.value,
+            price: price.current.value,
+            Info: productInfo.current.value,
+            imgUrl: productImage,
+            new: true
+        })
+    }
+
+    const uploadImg = () => {
+        if (productImg.current.value.substr("C:\\fakepath\\".length) !== "" && !productImage.includes(productImg.current.value.substr("C:\\fakepath\\".length))) {
+            setProductImage(productImg.current.value.substr("C:\\fakepath\\".length));
+        }
+    }
+
+
+    return (
+        <section class="admin-area pt-100 pb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <div class="basic-login">
+                            <h3 class="text-center mb-60">상품등록</h3>
+                            <form action="" onSubmit={addProduct}>
+
+                                <label for="name">상품이름</label>
+                                <div ><input name="productName" type="text" ref={productName} /></div>
+
+                                <label for="Info">상품정보</label>
+                                <input name="productInfo" ref={productInfo} />
+                                <div class="mt-10"></div>
+
+                                <label for="price">가격</label>
+                                <input name="price" type="text" ref={price} />
+
+                                <Form.Group className="mb-3">
+                                    <Form.Label>색상</Form.Label>
+                                    <Form.Select defaultValue="Choose...">
+                                        <option>Choose...</option>
+                                        <option name="color">RED</option>
+                                        <option name="color">White</option>
+                                        <option name="color">Gold</option>
+                                        <option name="color">Silver</option>
+                                        <option name="color">Green</option>
+                                    </Form.Select>
+                                </Form.Group>
+
+                                <Form.Group className="mb-3" controlId="formGridState">
+                                    <Form.Label>사이즈</Form.Label>
+                                    <Form.Select defaultValue="Choose...">
+                                        <option>Choose...</option>
+                                        <option name="size">S</option>
+                                        <option name="size">M</option>
+                                        <option name="size">L</option>
+                                    </Form.Select>
+                                </Form.Group>
+
+                                <div className="col-12">
+                                    <label htmlFor="image" className="form-label">image</label>
+                                    <div className="container">
+                                        <div className="row">
+                                            {
+                                                productImage === "" ? "" : <img className="" src={`./product-img/products/${productImage}`} />
+                                            }
+                                        </div>
+                                    </div>
+                                    <div className='d-flex'>
+                                        <input className="form-control" type="file" id="image" ref={productImg} />
+                                        <button type="button" className="btn btn-secondary" onClick={uploadImg} >upload</button>
+                                    </div>
+                                </div>
+
+                                <button class="btn theme-btn-2 w-100" type="submit" onSubmit={addProduct}>상품등록</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}
+
+export default Admin2;
