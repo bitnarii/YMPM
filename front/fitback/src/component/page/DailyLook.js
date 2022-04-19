@@ -1,14 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Body from "../../ui/dailyLookUi/Body";
-import ClothInfo from "../../ui/dailyLookUi/ClothInfo";
-import ItemGraph from "../../ui/dailyLookUi/ItemGraph";
-import NewOpinion from "../../ui/opinionUi/NewOpinion";
-import Opinion from "../../ui/opinionUi/Opinion";
-import Photo from "../../ui/dailyLookUi/Photo";
+import Body from "../ui/dailyLookUi/Body";
+import ClothInfo from "../ui/dailyLookUi/ClothInfo";
+import ItemGraph from "../ui/dailyLookUi/ItemGraph";
+import NewOpinion from "../ui/opinionUi/NewOpinion";
+import Opinion from "../ui/opinionUi/Opinion";
 import Record from "../../ui/dailyLookUi/Record";
 import Pagination from "rc-pagination";
+import Photo from "../ui/dailyLookUi/Photo";
 
 
 function DailyLook() {

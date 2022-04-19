@@ -1,10 +1,10 @@
 import React from "react";
-import BookMark from "../../ui/homeUi/BookMark";
-import CommentsOnMe from "../../ui/homeUi/CommentsOnMe";
-import DateGrid from "../../ui/homeUi/DateGrid";
-import MyComments from "../../ui/homeUi/MyComments";
-import ThumbCloset from "../../ui/homeUi/ThumbCloset";
-import ThumbLook from "../../ui/homeUi/ThumbLook";
+import BookMark from "../ui/homeUi/BookMark";
+import CommentsOnMe from "../ui/homeUi/CommentsOnMe";
+import DateGrid from "../ui/homeUi/DateGrid";
+import MyComments from "../ui/homeUi/MyComments";
+import ThumbCloset from "../ui/homeUi/ThumbCloset";
+import ThumbLook from "../ui/homeUi/ThumbLook";
 
 function Home() {
     return ( 
