@@ -6,7 +6,7 @@ import ClothInfo from "../ui/dailyLookUi/ClothInfo";
 import ItemGraph from "../ui/dailyLookUi/ItemGraph";
 import NewOpinion from "../ui/opinionUi/NewOpinion";
 import Opinion from "../ui/opinionUi/Opinion";
-import Record from "../../ui/dailyLookUi/Record";
+import Record from "../ui/dailyLookUi/Record";
 import Pagination from "rc-pagination";
 import Photo from "../ui/dailyLookUi/Photo";
 
