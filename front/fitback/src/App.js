@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import HotPost from "./component/ui/searchUi/HotPost";
 import Home from "./component/page/Home";
 import DailyLook from "./component/page/DailyLook";
+import AllItems from "./component/page/AllItems";
 
 function App() {
     return (
@@ -39,6 +40,8 @@ function App() {
                             element={<SearchResult />}
                         />
                         <Route path="/useredit" element={<UserEdit />} />
+                        <Route path="/allitems" element={<AllItems />} />
+
                     </Routes>
                 </main>
 
