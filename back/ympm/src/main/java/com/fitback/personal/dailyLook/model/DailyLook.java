@@ -39,4 +39,5 @@ public class DailyLook {
     @JsonFormat(pattern = "YYYY-MM-dd")
     @CreationTimestamp
     private LocalDate createDate;
+
 }

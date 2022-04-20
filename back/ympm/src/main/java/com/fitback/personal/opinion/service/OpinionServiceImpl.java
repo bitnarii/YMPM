@@ -4,8 +4,6 @@ import com.fitback.personal.opinion.repository.OpinionRepository;
 import com.fitback.personal.opinion.model.Opinion;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -61,11 +59,6 @@ public class OpinionServiceImpl implements OpinionService{
     @Override
     public void opinionDelete(Long id){
         opinionRepository.deleteById(id);
-    }
-
-    @Override
-   public double getAverageOpinion(Opinion opinion){
-        return 0;
     }
 
 }

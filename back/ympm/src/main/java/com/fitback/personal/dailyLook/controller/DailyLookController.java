@@ -1,11 +1,13 @@
 package com.fitback.personal.dailyLook.controller;
 
+import com.fitback.personal.closet.model.Closet;
 import com.fitback.personal.common.MessageVO;
+import com.fitback.personal.dailyLook.dto.DailyLookDto;
 import com.fitback.personal.dailyLook.model.DailyLook;
 import com.fitback.personal.dailyLook.service.DailyLookServiceImpl;
+import com.fitback.personal.post.dto.PostDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +23,6 @@ import java.util.List;
 @Slf4j
 public class DailyLookController {
 
-    @Autowired
     private final DailyLookServiceImpl dailyLookService;
 
     @PostMapping("/dailyLook/add")
@@ -83,5 +84,18 @@ public class DailyLookController {
         return result;
 
     }
+
+    @GetMapping("/dailyLook/searchresult")
+    public List<DailyLookDto> DailyLookDtoList(@RequestParam(value="keyword") String keyword, Model model) {
+        model.addAttribute("keyword", keyword);
+        return dailyLookService.searchPosts(keyword);
+    }
+
+    @PutMapping("dailyLook/put/{id}")
+    public DailyLook editDailyLook(@PathVariable Long id, @RequestBody DailyLook dailyLook){
+        return dailyLookService.editDailyLook(dailyLook);
+    }
+
+
 
 }
