@@ -7,6 +7,5 @@ import java.util.Hashtable;
 
 @Component
 public class MessageVO extends Hashtable {
-    //int resultCode;
-    //String resultMessage;
+
 }

@@ -8,6 +8,7 @@ import com.fitback.personal.dailyLook.service.DailyLookServiceImpl;
 import com.fitback.personal.post.dto.PostDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,7 @@ import java.util.List;
 @Slf4j
 public class DailyLookController {
 
+    @Autowired
     private final DailyLookServiceImpl dailyLookService;
 
     @PostMapping("/dailyLook/add")

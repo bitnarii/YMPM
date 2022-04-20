@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class DailyLook {
     private Long id;
 
     private String dailyLookName;
-    private int style;          //1: 걸리시 2: 댄디 3: 베이직 4: 보이쉬 5: 아메카지 6: 캐주얼 7: 펑크
+    private String style;          //1: 걸리시 2: 댄디 3: 베이직 4: 보이쉬 5: 아메카지 6: 캐주얼 7: 펑크
     private String filePath;
     private String fileName;
     private int category;       //1: 상의 2: 하의 3: 원피스 4: 아우터 5: 신발 6: 패션 잡화
@@ -41,10 +40,6 @@ public class DailyLook {
 
     @JsonFormat(pattern = "YYYY-MM-dd")
     @CreationTimestamp
-<<<<<<< HEAD
     private LocalDate createDate;
 
-=======
-    private Timestamp createDate;
->>>>>>> parent of 7b1be50 (백 취합(데일리룩, 댓글))
 }

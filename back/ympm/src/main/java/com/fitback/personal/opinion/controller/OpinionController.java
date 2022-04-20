@@ -5,17 +5,14 @@ import com.fitback.personal.opinion.service.OpinionServiceImpl;
 import com.fitback.personal.opinion.model.Opinion;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-<<<<<<< HEAD
 import org.springframework.http.HttpStatus;
-=======
->>>>>>> parent of 7b1be50 (백 취합(데일리룩, 댓글))
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
 
-
+@CrossOrigin
 @RestController
 @RequiredArgsConstructor
 @RequestMapping
@@ -32,7 +29,6 @@ public class OpinionController {
 
         System.out.println("OPINION:"+ opinion.toString());
 
-<<<<<<< HEAD
         boolean[] temp = opinion.getCheckedState();  //체크박스 배열에서 for문을 통한 점수 채점
         int sum = 0;
         for(boolean flag : temp)  sum += (flag) ? 20 : 0;
@@ -45,14 +41,6 @@ public class OpinionController {
 
         result.put("resultMessage", resultCode);
 
-=======
-        int resultCode = -1;
-
-        resultCode = opinionService.addOpinion(opinion, opiFile);
-        result.put("resultMessage", "저장 성공");
-//        result.put("searchUrl", "/opinion/add");
-        result.put("opinion", opinion);
->>>>>>> parent of 7b1be50 (백 취합(데일리룩, 댓글))
         if (resultCode > -1){
             result.put("resultMessage", "저장 성공");
             result.put("searchUrl", "/opinion/list");
