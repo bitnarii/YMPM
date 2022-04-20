@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import ReactPaginate from "react-paginate";
+// import ReactPaginate from "react-paginate";
 import { useParams } from "react-router-dom";
 
 
