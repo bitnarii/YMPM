@@ -29,7 +29,10 @@ public class DailyLook {
     private String filePath;
     private String fileName;
     private int category;       //1: 상의 2: 하의 3: 원피스 4: 아우터 5: 신발 6: 패션 잡화
+    private String info;
     private String description;
+    private int bookmark;
+
 
     @OrderBy("desc") //댓글 작성 시, 최근 순으로 볼 수 있도록
     @JsonIgnoreProperties({"dailyLook"}) //무한 참조 방지
@@ -38,6 +41,10 @@ public class DailyLook {
 
     @JsonFormat(pattern = "YYYY-MM-dd")
     @CreationTimestamp
+<<<<<<< HEAD
     private LocalDate createDate;
 
+=======
+    private Timestamp createDate;
+>>>>>>> parent of 7b1be50 (백 취합(데일리룩, 댓글))
 }
