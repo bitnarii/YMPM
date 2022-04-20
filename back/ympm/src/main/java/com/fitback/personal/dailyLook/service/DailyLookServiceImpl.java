@@ -1,10 +1,7 @@
 package com.fitback.personal.dailyLook.service;
 
-import com.fitback.personal.dailyLook.dto.DailyLookDto;
 import com.fitback.personal.dailyLook.model.DailyLook;
 import com.fitback.personal.dailyLook.repository.DailyLookRepository;
-import com.fitback.personal.post.dto.PostDto;
-import com.fitback.personal.post.model.Post;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +12,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -73,40 +69,5 @@ public class DailyLookServiceImpl implements DailyLookService{
         return dailyLookRepository.findAll();
     }
 
-    @Override
-    public List<DailyLookDto> searchPosts(String keyword) {
-        List<DailyLook> dailyLooks = dailyLookRepository.findByDailyLookNameContaining(keyword);
-        List<DailyLookDto> dailyLookDtoList = new ArrayList<>();
-
-        if (dailyLooks.isEmpty()) return dailyLookDtoList;
-
-        for (DailyLook dailyLook : dailyLooks) {
-            dailyLookDtoList.add(this.convertEntityToDto(dailyLook));
-        }
-
-        return dailyLookDtoList;
-
-    }
-
-    @Override
-    public DailyLook editDailyLook(DailyLook dailyLook) {
-        return dailyLookRepository.save(dailyLook);
-    }
-
-    private DailyLookDto convertEntityToDto(DailyLook dailyLook) {
-        return DailyLookDto.builder()
-                .id(dailyLook.getId())
-                .dailyLookName(dailyLook.getDailyLookName())
-                .style(dailyLook.getStyle())
-                .filePath(dailyLook.getFilePath())
-                .fileName(dailyLook.getFileName())
-                .info(dailyLook.getInfo())
-                .bookmark(dailyLook.getBookmark())
-                .description(dailyLook.getDescription())
-                .opinions(dailyLook.getOpinions())
-                .build();
-
-
-    }
 }
 
