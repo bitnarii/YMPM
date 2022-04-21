@@ -1,8 +1,10 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState } from "react";
+import AllItemsList from "./AllItemsList";
 
 function AllItems() {
     const [product, setProduct] = useState("");
+    const [del, setDel] = useState(false);
 
     useEffect(() => {
         axios.get("http://localhost:8080/item/getAll").then((Response) => {
@@ -10,6 +12,8 @@ function AllItems() {
             // console.log(Response.data);
         });
     }, []);
+
+
 
     return (
         <div className="getData">
@@ -32,40 +36,15 @@ function AllItems() {
                         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                             {product &&
                                 product.map((item) => (
-                                    <div className="col">
-                                        <div className="card shadow-sm">
-                                            <svg
-                                                className="bd-placeholder-img card-img-top"
-                                                width="100%"
-                                                height="225"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                role="img"
-                                                aria-label="Placeholder: Thumbnail"
-                                                preserveAspectRatio="xMidYMid slice"
-                                                focusable="false"
-                                            >
-                                                <title>Item</title>
-
-                                                <img
-                                                    key="{item.itemImgPath}"
-                                                    src={`http://localhost:8080/${item.itemImgPath}`}
-                                                    alt="img"
-                                                />
-                                            </svg>
-                                            <div className="card-body">
-                                                <p className="card-text">
-                                                    아이템명: {item.itemName}
-                                                    {"\n"}아이템 카테고리:{" "}
-                                                    {item.itemCategory}
-                                                    {"\n"}아이템 브랜드:{" "}
-                                                    {item.itemBrand}
-                                                    {"\n"}부가 설명:{" "}
-                                                    {item.itemMemo}
-                                                    {"\n"}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <>
+                                    <AllItemsList 
+                                    key={item.id}
+                                    product={product}
+                                    setProduct={setProduct}
+                                    item={item}
+                                    del={del}
+                                    setDel={setDel}/>
+                                    </>
                                 ))}
                         </div>
                     </div>
