@@ -49,7 +49,7 @@ function DailyLook() {
 
     return (
         <>
-            <div id="base" className="">
+            <div style={{height : "1800px"}}>
                 <div id="u606" className="ax_default heading_1">
                     <div id="u606_div" className=""></div>
                     <div id="u606_text" className="text ">

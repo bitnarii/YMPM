@@ -8,7 +8,7 @@ import ThumbLook from "../ui/homeUi/ThumbLook";
 
 function Home() {
     return ( 
-  <div id="base" className="">
+  <div style={{height : "1200px"}}>
     <div id="u229" className="ax_default heading_1">
         <div id="u229_div" className=""></div>
         <div id="u229_text" className="text ">
