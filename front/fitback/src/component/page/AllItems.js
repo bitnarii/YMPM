@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, {useEffect, useState } from "react";
-import AllItemsList from "./AllItemsList";
+import AllItemsList from "../ui/AllItemsUi/AllItemsList";
 
 function AllItems() {
     const [product, setProduct] = useState("");
