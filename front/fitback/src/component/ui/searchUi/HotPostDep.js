@@ -48,6 +48,7 @@ function HotPostDep({hotpost, setCheck}) {
 
     return (
         <>
+            {/* 데일리룩 둘러보기 */}
             <Container style={{position : "relative"}}>
                 <Row >
                     <Col>

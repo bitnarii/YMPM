@@ -35,19 +35,19 @@ function HotPost() {
 
     return ( 
         <>
-          {/* INPUT BOX */}
+          {/* 검색어 입력 INPUT */}
           <div id="u868" class="ax_default text_field">
                 <div id="u868_div" class=""></div>
                 <input onChange={debounce} id="u868_input" type="text"  class="u868_input" name="keyword"/>
             </div>
 
-            {/* BUTTON */}
+            {/* 검색버튼 */}
             <div id="u869" class="ax_default primary_button " >
                 <p><button style={{backgroundColor : "white", padding : "3px 0px 1px 0px", borderColor : "white" }} >
                 <Link to='/searchresult' state={{ keyword: keyword}} style={{color : "black", textDecoration : "none" , padding : "0 20px"}}> 검색</Link></button></p>
             </div>
 
-            {/* "최신글" txt */}
+            {/* TXT */}
             <div id="u911" class="ax_default heading_2">
                 <div id="u911_div" class=""></div>
                 <div id="u911_text" class="text ">
@@ -55,7 +55,7 @@ function HotPost() {
                 </div>
             </div>
 
-            {/* <Container style={{marginTop : "200px"}}> */}
+            {/* 게시글 둘러보기 */}
             <Container id="wrapper" style={{ marginTop : "200px", display: "flex", flexDirection: "row"}}>
                 <Row>               
                     {

@@ -41,13 +41,13 @@ function SearchResult() {
 
     return ( 
         <>            
-            {/* INPUT */}
+            {/* 검색어 입력 INPUT */}
             <div id="u868" class="ax_default text_field">
                 <div id="u868_div" class=""></div>
                 <input onChange={debounce} id="u868_input" type="text"  class="u868_input" name="keyword"  />
             </div>
 
-            {/* BUTTON */}
+            {/* 검색버튼 */}
             <div id="u869" class="ax_default primary_button " >
                 <p><button  onClick = {buttonClick} style={{backgroundColor : "white", padding : "3px 20px 1px 20px", borderColor : "white" } } >검색</button></p>
             </div>
@@ -60,6 +60,7 @@ function SearchResult() {
                 </div>
             </div>
 
+            {/*검색결과 조회*/}
             <Container id="wrapper" style={{marginTop : "200px", display: "flex", flexDirection: "row"}}>
                 <Row>                  
                 {
@@ -76,6 +77,7 @@ function SearchResult() {
                 </Row>
             </Container>
 
+            {/* 페이지네이션 */}
             <Pagination
                 total={searchList.length}
                 limit={limit}

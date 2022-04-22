@@ -24,7 +24,7 @@ function BookmarkList() {
 
     return (
         <>        
-            {/* "나의 북마크" txt */}
+            {/* TXT */}
             <div id="u959" class="ax_default heading_2">
                 <div id="u959_div" class=""></div>
                 <div id="u959_text" class="text ">
@@ -32,6 +32,7 @@ function BookmarkList() {
                 </div>
             </div>      
 
+            {/* 북마크 조회 */}
             <Container id="wrapper" style={{marginTop : "200px", display: "flex", flexDirection: "row"}}>
                 <Row>                            
                         {

@@ -38,7 +38,9 @@ function BookmarkListDep ({book, check, setCheck}) {
         }
     }
 
-    return ( 
+    return (
+        <>
+        {/* 북마크 조회 */}
         <Container style={{position : "relative"}}>
             <Row>
                 <Col>
@@ -88,6 +90,7 @@ function BookmarkListDep ({book, check, setCheck}) {
                 </Col>
             </Row>
         </Container>    
+        </>
      );
 }
 
