@@ -1073,9 +1073,10 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:217px;
+  width:207px;
   height:207px;
   border: 1px solid #ebe9e9;
+  object-fit: scale-down;
 
 }
 #u891 {

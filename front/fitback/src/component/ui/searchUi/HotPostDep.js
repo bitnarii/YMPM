@@ -72,7 +72,7 @@ function HotPostDep({hotpost, setCheck}) {
                         <div id="u894" class="ax_default heading_3">
                             <div id="u894_div" class=""></div>
                             <div id="u894_text" class="text ">
-                                <p><span>{"점수"}</span></p>
+                                <p><span>{}</span></p>
                             </div>
                         </div>
                     </Col>

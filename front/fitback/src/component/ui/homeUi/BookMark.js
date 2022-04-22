@@ -27,8 +27,8 @@ function BookMark() {
          <Container id="wrapper" style={{ display: "flex", flexDirection: "row"}}>
                 <Row >                            
                         {
-                            bookmarkList.slice(0, 4).map(book => (
-                                <Col style={{ width : "300px" , height : "115px", padding : "20px"}}>
+                            bookmarkList.slice(0, 2).map(book => (
+                                <Col style={{ width : "300px" , height : "115px"}}>
                                     <BookMarkDep
                                         key = {book.id}
                                         book = {book}

@@ -74,7 +74,7 @@ function SearchResultPostDep({searchResult, setCheck}) {
                     <div id="u918" class="ax_default heading_3">
                         <div id="u918_div" class=""></div>
                         <div id="u918_text" class="text ">
-                            <p><span>{"점수"}</span></p>
+                            <p><span>{ }</span></p>
                         </div>
                     </div>
                 </Col>

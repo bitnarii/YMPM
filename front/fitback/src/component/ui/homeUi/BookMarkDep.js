@@ -21,7 +21,7 @@ function BookMarkDep({book, check, setCheck}) {
     return ( 
     <Container style={{position : "relative"}}>
         <Row>
-            <Col style= {{margin : "0 0px 30px 20px"}}>
+            <Col>
                 <div id="u243" className="ax_default placeholder">
                 <img id="u243_img" className="img " src = {`images/imgtest/${bookList.filePath}`}   alt=""/>
                     <div id="u243_text" className="text " >
