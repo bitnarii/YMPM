@@ -23,9 +23,9 @@ public class Opinion {
     @Transient
     private boolean[] checkedState;
 
+    private int score;
     private String filePath;
     private String fileName;
-    private int score;
     private String fileOrigin;
     private String brandName;
     private String itemName;
