@@ -18,11 +18,23 @@ import java.util.List;
 public class DailyLookDto {
     private Long id;
     private String dailyLookName;
-    private String style;
-    //private String orgFile;
+    private int style;
     private String filePath;
     private String fileName;
-    private String info;
+
+    private String topBrand;
+    private String topName;;
+    private String bottomBrand;
+    private String bottomName;
+    private String dressBrand;
+    private String dressName;
+    private String outerBrand;
+    private String outerName;
+    private String shoesBrand;
+    private String shoesName;
+    private String etcBrand;
+    private String etcName;
+
     private String description;
     private int bookmark;
 
@@ -36,13 +48,38 @@ public class DailyLookDto {
     private Timestamp createDate;
 
     @Builder
-    public DailyLookDto(Long id, String dailyLookName, String style, String filePath, String fileName, String info, String description, int bookmark, List<Opinion> opinions, Timestamp createDate) {
+    public DailyLookDto(Long id, String dailyLookName, int style, String filePath, String fileName, String topBrand,
+            String topName,
+             String bottomBrand,
+             String bottomName,
+             String dressBrand,
+             String dressName,
+             String outerBrand,
+             String outerName,
+             String shoesBrand,
+             String shoesName,
+             String etcBrand,
+             String etcName, String description, int bookmark, List<Opinion> opinions, Timestamp createDate) {
         this.id = id;
         this.dailyLookName = dailyLookName;
         this.style = style;
         this.filePath = filePath;
         this.fileName = fileName;
-        this.info = info;
+        this.topBrand = topBrand;
+        this.topName = topName;
+        this.bottomBrand = bottomBrand;
+        this.bottomName = bottomName;
+        this.dressBrand = dressBrand;
+        this.dressName = dressName;
+        this.outerBrand = outerBrand;
+        this.outerName = outerName;
+        this.shoesBrand = shoesBrand;
+        this.shoesName = shoesName;
+        this.etcBrand = etcBrand;
+        this.etcName = etcName;
+        this.topBrand = topBrand;
+
+
         this.description = description;
         this.bookmark = bookmark;
         this.opinions = opinions;

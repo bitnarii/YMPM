@@ -3,8 +3,6 @@ package com.fitback.personal.dailyLook.service;
 import com.fitback.personal.dailyLook.dto.DailyLookDto;
 import com.fitback.personal.dailyLook.model.DailyLook;
 import com.fitback.personal.dailyLook.repository.DailyLookRepository;
-import com.fitback.personal.post.dto.PostDto;
-import com.fitback.personal.post.model.Post;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -28,29 +27,29 @@ public class DailyLookServiceImpl implements DailyLookService{
     private DailyLookRepository dailyLookRepository;
 
     @Override
-    public int addDailyLook(DailyLook dailyLook, MultipartFile orgFile) throws Exception {
+    public DailyLook addDailyLook(MultipartFile orgFile, DailyLook dailyLook) throws IOException {
 
-        String filePath;    // 파일 경로
-        UUID uuid;          // 파일 고유 식별자
-        String fileName;    // 파일명
-        File saveFile;      // 저장 파일명
-        int result = 0;     // 0 : success, -1:failed
+        String rootPath = System.getProperty("user.dir");
+        String imgPath = "src\\main\\resources\\static\\files";
+        String savePath = rootPath + File.separator + imgPath; //최종 파일 저장 장소
 
-        try {
-            if(orgFile != null) {
-                filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
-                uuid = UUID.randomUUID();
-                fileName = uuid + orgFile.getOriginalFilename();
-                saveFile = new File(filePath, fileName);
-                orgFile.transferTo(saveFile);
-                dailyLook.setFileName(fileName);
-                dailyLook.setFilePath("/files/" + fileName);
-            }
-        }catch(FileNotFoundException fe){
-            result = -1;
-        }
-        dailyLookRepository.save(dailyLook);
-        return result;
+        String orgName = orgFile.getOriginalFilename();
+        String imgName = UUID.randomUUID() + ".jpg";
+        File saveImg = new File(savePath + File.separator + imgName); //parent 디렉토리에 imgName 이름의 디렉토리나 파일 객체 생성
+        System.out.println(saveImg);
+
+        orgFile.transferTo(saveImg);//파일 저장
+
+        dailyLook.setFileName(imgName); //서비스 파일명
+        dailyLook.setFileOrigin(orgName); //원본 파일명
+        dailyLook.setFilePath(savePath + File.separator + imgName); //절대 경로 + 이미지 파일명 저장
+
+        System.out.println("SAVEPATH : " + savePath);
+        System.out.println("IMGNAME : " + imgName);
+        System.out.println("ORGNAME : " + orgName);
+        System.out.println("ITEMIMGPATH : " + dailyLook.getFilePath());
+
+        return dailyLookRepository.save(dailyLook);
     }
 
     @Override
@@ -89,7 +88,27 @@ public class DailyLookServiceImpl implements DailyLookService{
     }
 
     @Override
-    public DailyLook editDailyLook(DailyLook dailyLook) {
+    public DailyLook editDailyLook( Long id, DailyLook dailyLook, MultipartFile orgFile) throws IOException {
+        String rootPath = System.getProperty("user.dir");
+        String imgPath = "src\\main\\resources\\static\\files";
+        String savePath = rootPath + File.separator + imgPath; //최종 파일 저장 장소
+
+        String orgName = orgFile.getOriginalFilename();
+        String imgName = UUID.randomUUID() + ".jpg";
+        File saveImg = new File(savePath + File.separator + imgName); //parent 디렉토리에 imgName 이름의 디렉토리나 파일 객체 생성
+        System.out.println(saveImg);
+
+        orgFile.transferTo(saveImg);//파일 저장
+
+        dailyLook.setFileName(imgName); //서비스 파일명
+        dailyLook.setFileOrigin(orgName); //원본 파일명
+        dailyLook.setFilePath(savePath + File.separator + imgName); //절대 경로 + 이미지 파일명 저장
+
+        System.out.println("SAVEPATH : " + savePath);
+        System.out.println("IMGNAME : " + imgName);
+        System.out.println("ORGNAME : " + orgName);
+        System.out.println("ITEMIMGPATH : " + dailyLook.getFilePath());
+
         return dailyLookRepository.save(dailyLook);
     }
 
@@ -100,13 +119,28 @@ public class DailyLookServiceImpl implements DailyLookService{
                 .style(dailyLook.getStyle())
                 .filePath(dailyLook.getFilePath())
                 .fileName(dailyLook.getFileName())
-                .info(dailyLook.getInfo())
+                .topBrand(dailyLook.getTopBrand())
+                .topName(dailyLook.getTopName())
+                .bottomBrand(dailyLook.getBottomBrand())
+                .bottomName(dailyLook.getBottomName())
+                .dressBrand(dailyLook.getDressBrand())
+                .dressName(dailyLook.getDressName())
+                .outerBrand(dailyLook.getOuterBrand())
+                .outerName(dailyLook.getOuterName())
+                .shoesBrand(dailyLook.getShoesBrand())
+                .shoesName(dailyLook.getShoesName())
+                .etcBrand(dailyLook.getEtcBrand())
+                .etcName(dailyLook.getEtcName())
                 .bookmark(dailyLook.getBookmark())
                 .description(dailyLook.getDescription())
                 .opinions(dailyLook.getOpinions())
                 .build();
+            }
 
-
+    @Override
+    public String getByIdItemImgPath(Long id) {
+        DailyLook dailyLook = dailyLookRepository.findById(id).get();
+        return dailyLook.getFilePath();
     }
 }
 

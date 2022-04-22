@@ -21,29 +21,31 @@ public class OpinionServiceImpl implements OpinionService{
     private final OpinionRepository opinionRepository;
 
     @Override
-    public int addOpinion(Opinion opinion, MultipartFile opiFile) throws Exception{
+    public Opinion addOpinion(Opinion opinion, MultipartFile opiFile) throws Exception{
 
-        String filePath;          // 파일 경로
-        UUID uuid;               // 파일 고유 식별자
-        String fileName;      // 파일명
-        File saveFile;           // 저장 파일명
-        int result = 0;          // 0 : success, -1:failed
+        String rootPath = System.getProperty("user.dir");
+        String imgPath = "src\\main\\resources\\static\\files";
+        String savePath = rootPath + File.separator + imgPath; //최종 파일 저장 장소
 
-        try {
-            if (opiFile != null){
-                filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
-                uuid = UUID.randomUUID();
-                fileName = uuid  + opiFile.getOriginalFilename();
-                saveFile = new File(filePath, fileName);
-                opiFile.transferTo(saveFile);
-                opinion.setFileName(fileName);
-                opinion.setFilePath("/files/" + fileName);
-            }
-        } catch (FileNotFoundException e){
-            result = -1;
-        }
-        opinionRepository.save(opinion);
-        return result;
+        String orgName = opiFile.getOriginalFilename();
+        String fileExt = (orgName != null) ? orgName.substring(orgName.lastIndexOf('.') + 1) : " " ; //파일 확장자
+        String imgName = UUID.randomUUID() + "." + fileExt; //서비스 파일명 + 확장자
+        File saveImg = new File(savePath + File.separator + imgName); //parent 디렉토리에 imgName 이름의 디렉토리나 파일 객체 생성
+        System.out.println(saveImg);
+
+        opiFile.transferTo(saveImg);//파일 저장
+
+        opinion.setFileName(imgName); //서비스 파일명
+        opinion.setFileOrigin(orgName); //원본 파일명
+//        item.setItemImgPath("/files/" + imgName); //서비스 경로
+        opinion.setFilePath(savePath + File.separator + imgName);
+
+        System.out.println("SAVEPATH : " + savePath);
+        System.out.println("IMGNAME : " + imgName);
+        System.out.println("ORGNAME : " + orgName);
+        System.out.println("ITEMIMGPATH : " + opinion.getFilePath());
+
+        return opinionRepository.save(opinion);
     }
 
     @Override
@@ -59,6 +61,12 @@ public class OpinionServiceImpl implements OpinionService{
     @Override
     public void opinionDelete(Long id){
         opinionRepository.deleteById(id);
+    }
+
+    @Override
+    public String getByIdItemImgPath(Long id) {
+        Opinion opinion = opinionRepository.findById(id).get();
+        return opinion.getFilePath();
     }
 
 }

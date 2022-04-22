@@ -23,22 +23,12 @@ public class Opinion {
     @Transient
     private boolean[] checkedState;
 
-    private int score;
     private String filePath;
     private String fileName;
-
-    private String topBrand;
-    private String topName;;
-    private String bottomBrand;
-    private String bottomName;
-    private String dressBrand;
-    private String dressName;
-    private String outerBrand;
-    private String outerName;
-    private String shoesBrand;
-    private String shoesName;
-    private String etcBrand;
-    private String etcName;
+    private int score;
+    private String fileOrigin;
+    private String brandName;
+    private String itemName;
 
     @ManyToOne
     @JoinColumn(name = "look_id")
