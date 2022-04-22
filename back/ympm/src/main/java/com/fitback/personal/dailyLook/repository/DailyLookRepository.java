@@ -1,7 +1,6 @@
 package com.fitback.personal.dailyLook.repository;
 
 import com.fitback.personal.dailyLook.model.DailyLook;
-import com.fitback.personal.post.model.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
