@@ -62,7 +62,7 @@ public class DailyLookController {
         return dailyLookService.searchPosts(keyword);
     }
 
-    @PutMapping("dailyLook/put/{id}")
+    @PutMapping("dailyLook/edit/{id}")
     public DailyLook editDailyLook(@PathVariable Long id, DailyLook dailyLook, MultipartFile orgFile) throws IOException{
         return dailyLookService.editDailyLook(id, dailyLook, orgFile);
     }
