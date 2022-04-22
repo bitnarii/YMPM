@@ -11,10 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -28,14 +25,14 @@ public class ItemServiceImpl implements ItemService{
 
     @Override
 //    @Transactional //begin, commit 자동 수행, 예외 발생 시 rollback 처리
-    public Item addItem(MultipartFile itemImg, Item item) throws IllegalStateException, Exception{
+    public Item addItem(MultipartFile itemImg, Item item) throws IOException {
 
         String rootPath = System.getProperty("user.dir");
         String imgPath = "src\\main\\resources\\static\\files";
         String savePath = rootPath + File.separator + imgPath; //최종 파일 저장 장소
 
         String orgName = itemImg.getOriginalFilename();
-        String fileExt = (orgName != null) ? orgName.substring(orgName.lastIndexOf('.') + 1) : " " ; //파일 확장자
+        String fileExt = (orgName != null) ? orgName.substring(orgName.lastIndexOf('.') + 1) : " "; //파일 확장자
         String imgName = UUID.randomUUID() + "." + fileExt; //서비스 파일명 + 확장자
         File saveImg = new File(savePath + File.separator + imgName); //parent 디렉토리에 imgName 이름의 디렉토리나 파일 객체 생성
         System.out.println(saveImg);
@@ -46,7 +43,6 @@ public class ItemServiceImpl implements ItemService{
         item.setItemImgOrigin(orgName); //원본 파일명
 //        item.setItemImgPath("/files/" + imgName); //서비스 경로
         item.setItemImgPath(savePath + File.separator + imgName);
-
 
         System.out.println("SAVEPATH : " + savePath);
         System.out.println("IMGNAME : " + imgName);

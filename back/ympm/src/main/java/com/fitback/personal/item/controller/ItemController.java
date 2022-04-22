@@ -33,7 +33,7 @@ public class ItemController {
     private final ItemService itemService;
 
     @PostMapping("/add")
-    public Item addItem(MultipartFile itemImg, Item item) throws Exception{
+    public Item addItem(@RequestParam MultipartFile itemImg, Item item) throws Exception{
         return itemService.addItem(itemImg, item);
     }
 
