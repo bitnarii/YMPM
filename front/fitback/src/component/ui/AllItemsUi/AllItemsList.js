@@ -27,17 +27,14 @@ function AllItemsList({ item, del, setDel }) {
                             src={imagePath}
                             alt="img"
                             className="bd-placeholder-img card-img-top"
-                            // width="100%"
-                            // height="300"
+                            width="100%"
                         />
                     <div className="card-body">
-                        <p className="card-text">
-                            아이템명: {item.itemName}
-                            {"\n"}아이템 카테고리: {item.itemCategory}
-                            {"\n"}아이템 브랜드: {item.itemBrand}
-                            {"\n"}부가 설명: {item.itemMemo}
-                            {"\n"}
-                        </p>
+                        <p className="card-text">아이템명: {item.itemName}</p>
+                        <p className="card-text">아이템 카테고리: {item.itemCategory}</p>
+                        <p className="card-text">아이템 브랜드: {item.itemBrand}</p>
+                        <p className="card-text">부가 설명: {item.itemMemo}</p>
+                        <p className="card-text"></p>
                         <div className="btn-group">
                             <button
                                 type="button"
