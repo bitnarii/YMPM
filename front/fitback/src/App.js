@@ -14,6 +14,7 @@ import HotPost from "./component/ui/searchUi/HotPost";
 import Home from "./component/page/Home";
 import DailyLook from "./component/page/DailyLook";
 import AllItems from "./component/page/AllItems";
+import NewDailyLook from "./component/page/NewDailyLook";
 
 function App() {
     return (
@@ -30,6 +31,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/dailyLook" element={<DailyLook />} />
+                        <Route path="/newDailyLook" element={<NewDailyLook />} />
                         <Route path="/login" element={<Login />} />
                         <Route
                             path="/bookmarklist"

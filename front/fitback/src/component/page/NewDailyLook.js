@@ -1,10 +1,11 @@
 import React from "react";
-import { Button, Card, Col, Row, Container, FormControl, InputGroup, Table, Badge, ListGroup } from "react-bootstrap";
+import { Button, Card, Col, Row, Container, FormControl, InputGroup, Table, Badge } from "react-bootstrap";
 
-function DailyLook() {
+
+function NewDailyLook() {
     return ( 
-    <>
-    <Container style={{margin: "auto", width: "100%", display: "flex"}}>    
+      <>
+   <Container style={{margin: "auto", width: "100%", display: "flex"}}>    
     <Row>
     <Col>
           
@@ -20,7 +21,7 @@ function DailyLook() {
     
     <InputGroup style={{width: "400px", marginLeft: "370px", marginTop: "200px", position: "absolute"}}>
         <FormControl value="데일리룩 제목" style={{border: "transparent"}}/>
-        <FormControl style={{borderLeft: "transparent", borderRight: "transparent"}}/>
+        <FormControl  type="text" style={{borderLeft: "transparent", borderRight: "transparent"}}/>
     </InputGroup>
     <InputGroup style={{width: "400px", marginLeft: "370px", marginTop: "240px", position: "absolute"}}>
         <FormControl value="   카테고리" style={{border: "transparent", borderRight: "transparent"}}/>
@@ -100,68 +101,28 @@ function DailyLook() {
   <InputGroup style={{position:"absolute", marginTop: "35px", marginLeft: "328px", width: "500px", height: "200px", zIndex: "1"}}>
     <FormControl as="textarea" aria-label="With textarea" />
   </InputGroup>
-
-        <div style={{float: "left"}}>
-            <Button style={{backgroundColor: "black", border: "black", color: "white", marginLeft: "525px", marginTop: "236px"}}>수정하기</Button>        
-            <Button style={{backgroundColor: "black", border: "black", color: "white", marginLeft: "525px", marginTop: "1px"}}>삭제하기</Button>        
-        </div>
-
+  <button style={{height: "33px", marginLeft: "525px", marginTop: "233px", backgroundColor: "black", color: "white", borderRadius: "5px"}}>등록하기</button>
     </Col>
+
     
         <h3 style={{position: "absolute", zIndex: "10"}}>
-  <Badge style={{ marginLeft: "945px", marginTop: "180px"}} bg="black">Opinion</Badge>
+  <Badge style={{ marginLeft: "930px", marginTop: "180px"}} bg="black">My Closet</Badge>
     </h3>
     </Row>
 
     <Row>
       <Card style={{height: "685px", width: "20rem", marginLeft: "90px", marginTop: "200px"}}>
-     <Button  style={{width: "100px", position: "absolute", marginTop: "30px", height: "30px", lineHeight:"11px", backgroundColor: "black", border: "black", color: "white"}}>댓글 쓰기</Button>
-    <InputGroup style={{marginTop: "70px"}}>
-    <FormControl aria-label="Text input with checkbox" />
-    <InputGroup.Checkbox />
-    </InputGroup>
-     
-    <InputGroup style={{marginTop: "5px"}}>
-    <FormControl aria-label="Text input with checkbox" />
-    <InputGroup.Checkbox />
-    </InputGroup>
-
-    <InputGroup style={{marginTop: "4px"}}>
-    <FormControl aria-label="Text input with checkbox" />
-    <InputGroup.Checkbox />
-    </InputGroup>
-
-    <InputGroup style={{marginTop: "5px"}}>
-    <FormControl aria-label="Text input with checkbox" />
-    <InputGroup.Checkbox />
-    </InputGroup>
-
-    <InputGroup style={{marginTop: "5px"}}>
-    <FormControl aria-label="Text input with checkbox" />
-    <InputGroup.Checkbox />
-    </InputGroup>
-
-    <Badge style={{marginTop: "20px", height: "35px", fontSize: "large"}} bg="black">Free Opinion</Badge>
-    <FormControl style={{width: "295px", marginTop: "7px", height: "55px", borderLeft: "transparent", borderRight: "transparent"}}/>
-      
-    <Badge style={{marginTop: "20px", height: "35px", fontSize: "large"}} bg="black">Recommended Item</Badge>
-      
-      <Row>
-    <img style={{width: "150px", marginTop: "45px", marginLeft: "0px"}} src="https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg" alt=""/>
-
-
-<ListGroup style={{width: "165px", marginTop:"30px"}}>
-  <ListGroup.Item style={{border: "transparent"}}>브랜드명</ListGroup.Item>
- <input type="text" style={{borderLeft: "transparent", borderRight: "transparent", borderColor: "#dbdbdb"}}/> 
-  <ListGroup.Item style={{border: "transparent"}}>상품명</ListGroup.Item>
-  <input type="text" style={{borderLeft: "transparent", borderRight: "transparent", borderColor: "#dbdbdb"}}/> 
-</ListGroup>
+        <Row>        
+          <Card.Img src="closet (3).png" alt="" style={{width: "135px", marginTop: "130px"}}/> 
+          <Card.Img src="closet (3).png" alt="" style={{width: "135px", marginTop: "130px", marginLeft: "30px"}}/> 
+          <Card.Img src="closet (3).png" alt="" style={{width: "135px", marginTop: "130px"}}/> 
+          <Card.Img src="closet (3).png" alt="" style={{width: "135px", marginTop: "130px", marginLeft: "30px"}}/> 
         </Row>
       </Card> 
     </Row>
    </Container>
-    </> 
-    );
+     </>   
+  );
 }
 
-export default DailyLook;
+export default NewDailyLook;
