@@ -1,8 +1,83 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useRef, useState } from "react";
 import { Button, Card, Col, Row, Container, FormControl, InputGroup, Table, Badge } from "react-bootstrap";
 
 
 function NewDailyLook() {
+
+  const orgFile = useRef(); 
+  const [imageSrc, setImageSrc] = useState([]);
+  const [previewImg, setPreviewImg] = useState(null);
+  const dailyLookName = useRef();
+  const style = useRef();
+  const topBrand = useRef();
+  const topName = useRef();
+  const bottomBrand = useRef();
+  const bottomName = useRef();
+  const dressBrand = useRef();
+  const dressName = useRef();
+  const outerBrand = useRef();
+  const outerName = useRef();
+  const shoesBrand = useRef();
+  const shoesName = useRef();
+  const etcBrand = useRef();
+  const etcName = useRef();
+  const description = useRef();
+
+  //변수에 이미지 값 담기 및 이미지 미리보기
+  const insertImg = (e) => {
+    e.preventDefault();
+    const file = e.target.files[0];
+    setImageSrc([...imageSrc, { uploadedFile: file }]);
+
+    let reader = new FileReader();
+    if(e.target.files[0]){
+      reader.readAsDataURL(e.target.files[0])
+    }
+    reader.onloadend = () => {
+      const previewImgUrl = reader.result
+      if(previewImgUrl){
+        setPreviewImg(previewImgUrl)
+      }
+    }
+  }
+
+  //파일 업로드 버튼
+  const handleClick = () => {
+    orgFile.current.click();
+  };
+
+  //이미지 post 요청
+  const addDailyLook = (e) => {
+      e.preventDefault();
+      if(window.confirm('새 데일리룩을 등록합니다.')){
+      const formData = new FormData();
+      formData.append("dailyLookName", dailyLookName.current.value);
+      formData.append("style", style.current.value);    
+      formData.append("topBrand", topBrand.current.value);
+      formData.append("orgFile", imageSrc[0].uploadedFile);
+      formData.append("topName", topName.current.value);    
+      formData.append("bottomBrand", bottomBrand.current.value);
+      formData.append("bottomName", bottomName.current.value);
+      formData.append("dressBrand", dressBrand.current.value);
+      formData.append("dressName", dressName.current.value);
+      formData.append("outerBrand", outerBrand.current.value);
+      formData.append("outerName", outerName.current.value);
+      formData.append("shoesBrand", shoesBrand.current.value);
+      formData.append("shoesName", shoesName.current.value);
+      formData.append("etcBrand", etcBrand.current.value);
+      formData.append("etcName", etcName.current.value);
+      formData.append("description", description.current.value);
+  axios({
+    method: "post",
+    url:`http://localhost:8080/dailyLook/add`,
+    data: formData,
+    headers: { "Content-Type" : "multipart/form-data" }
+  }).then((response) => console.log("등록 성공 "+ response))
+    .catch((error) => console.log("등록 실패 "+ error));
+    return window.location.href = `/`;  // 홈화면으로 이동
+  }};
+
     return ( 
       <>
    <Container style={{margin: "auto", width: "100%", display: "flex"}}>    
@@ -10,9 +85,17 @@ function NewDailyLook() {
     <Col>
           
     <Card style={{ width: '20rem', marginTop: "200px", position: "absolute"}}>
-        <Card.Img style={{height: "615px"}} variant="top" src="" />
+        <Card.Img style={{height: "615px"}} variant="top" src={previewImg ? previewImg : "https://ualr.edu/elearning/files/2020/10/No-Photo-Available-924x1155.jpg"} />
         <Card.Body>
-        <Button variant="primary" style={{marginLeft: "175px", backgroundColor: "black", border: "black", color: "white"}}>사진 업로드</Button>
+        <Button onClick={handleClick} variant="primary" style={{marginLeft: "175px", backgroundColor: "black", border: "black", color: "white"}}>사진 업로드</Button>
+               <input 
+                type="file"
+                name="orgFile"
+                accept="image/*"
+                ref={orgFile}
+                onChange={(e) => {insertImg(e);}}
+                style={{display: 'none'}}
+                />       
         </Card.Body>
     </Card>
     </Col>
@@ -21,11 +104,11 @@ function NewDailyLook() {
     
     <InputGroup style={{width: "400px", marginLeft: "370px", marginTop: "200px", position: "absolute"}}>
         <FormControl value="데일리룩 제목" style={{border: "transparent"}}/>
-        <FormControl  type="text" style={{borderLeft: "transparent", borderRight: "transparent"}}/>
+        <FormControl  ref={dailyLookName} type="text" style={{borderLeft: "transparent", borderRight: "transparent"}}/>
     </InputGroup>
     <InputGroup style={{width: "400px", marginLeft: "370px", marginTop: "240px", position: "absolute"}}>
         <FormControl value="   카테고리" style={{border: "transparent", borderRight: "transparent"}}/>
-        <select name="style" style={{width: "200px"}}>
+        <select name="style" ref={style} style={{width: "200px"}}>
               <option className="u605_input_option" selected='selected'>스타일 선택</option>
               <option className="u605_input_option" value="1">걸리시</option>
               <option className="u605_input_option" value="2">댄디</option>
@@ -50,45 +133,45 @@ function NewDailyLook() {
   <thead>
     <tr >
       <th>분류</th>
-      <th>상품명</th>
       <th>브랜드명</th>
+      <th>상품명</th>
     </tr>
   </thead>
   <tbody id="table1" >
     <tr>
       <td>상의</td>
-      <td><input  type="text" style={{border: "black"}}/></td>
-      <td><input  type="text" style={{border: "black"}}/></td> 
+      <td><input ref={topBrand} name="topBrand" type="text" style={{border: "black"}}/></td>
+      <td><input ref={topName}  name="topName" type="text" style={{border: "black"}}/></td> 
     </tr>
 
     <tr>
     <td>하의</td>
-      <td><input  type="text" style={{border: "black"}}/></td>
-      <td><input  type="text" style={{border: "black"}}/></td>
+      <td><input ref={bottomBrand} name="bottomBrand" type="text" style={{border: "black"}}/></td>
+      <td><input ref={bottomName} name="bottomName" type="text"  style={{border: "black"}}/></td>
     </tr>
 
     <tr>
     <td>원피스</td>
-      <td><input  type="text" style={{border: "black"}}/></td>
-      <td><input  type="text" style={{border: "black"}}/></td>
+      <td><input ref={dressBrand}  name="dressBrand" type="text" style={{border: "black"}}/></td>
+      <td><input ref={dressName} name="dressName" type="text" style={{border: "black"}}/></td>
     </tr>
 
     <tr>
     <td>아우터</td>
-      <td><input  type="text" style={{border: "black"}}/></td>
-      <td><input  type="text" style={{border: "black"}}/></td>
+      <td><input ref={outerBrand} name="outerBrand" type="text" style={{border: "black"}}/></td>
+      <td><input ref={outerName} name="outerName" type="text" style={{border: "black"}}/></td>
     </tr>
 
     <tr>
     <td>신발</td>
-      <td><input  type="text" style={{border: "black"}}/></td>
-      <td><input  type="text" style={{border: "black"}}/></td>
+      <td><input  ref={shoesBrand} name="shoesBrand" type="text" style={{border: "black"}}/></td>
+      <td><input ref={shoesName} name="shoesName" type="text" style={{border: "black"}}/></td>
     </tr>
 
     <tr>
     <td>패션잡화</td>
-      <td><input  type="text" style={{border: "black"}}/></td>
-      <td><input  type="text" style={{border: "black"}}/></td>
+      <td><input name="etcBrand" ref={etcBrand} type="text" style={{border: "black"}}/></td>
+      <td><input name="etcName" ref={etcName} type="text" style={{border: "black"}}/></td>
     </tr>
 
   </tbody>
@@ -99,9 +182,9 @@ function NewDailyLook() {
 </h3>
 
   <InputGroup style={{position:"absolute", marginTop: "35px", marginLeft: "328px", width: "500px", height: "200px", zIndex: "1"}}>
-    <FormControl as="textarea" aria-label="With textarea" />
+    <FormControl as="textarea" aria-label="With textarea" name="description" ref={description}/>
   </InputGroup>
-  <button style={{height: "33px", marginLeft: "525px", marginTop: "233px", backgroundColor: "black", color: "white", borderRadius: "5px"}}>등록하기</button>
+  <button onClick={addDailyLook} style={{height: "33px", marginLeft: "473px", marginTop: "237px", backgroundColor: "black", color: "white", borderRadius: "5px"}}>오늘의 데일리룩 등록하기</button>
     </Col>
 
     
