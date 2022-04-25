@@ -16,13 +16,27 @@ function SearchResultPostDep({searchResult, setCheck}) {
             }).then(
                 setCheck,
                 axios.put(`http://localhost:8080/dailyLook/put/${searchResult.id}`,{
-                    bookmark : 1,                    
                     id : searchResult.id,
                     dailyLookName : searchResult.dailyLookName,
-                    description : searchResult.description,
-                    fileName : searchResult.fileName,
+                    style : searchResult.style,
                     filePath : searchResult.filePath,
-                    createDate : searchResult.createDate
+                    fileName : searchResult.fileName,
+                    fileOrigin : searchResult.fileOrigin,
+                    category : searchResult.category,
+                    description : searchResult.description,
+                    bookmark : 1,
+                    topBrand : searchResult.topBrand,
+                    topName : searchResult.topName,
+                    bottomBrand : searchResult.bottomBrand,
+                    bottomName : searchResult.bottomName,
+                    dressBrand : searchResult.dressBrand,
+                    dressName : searchResult.dressName,
+                    outerBrand : searchResult.outerBrand,
+                    outerName : searchResult.outerName,
+                    shoesBrand : searchResult.shoesBrand,
+                    shoesName : searchResult.shoesName,
+                    etcBrand : searchResult.etcBrand,
+                    etcName : searchResult.etcName
                 }),            
                 Response =>{
                     console.log(Response)

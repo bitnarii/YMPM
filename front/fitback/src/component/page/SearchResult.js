@@ -16,7 +16,7 @@ function SearchResult() {
     const [keyword2, setKeyword] = useState('')
     const [page, setPage] = useState(1);
     const location = useLocation();
-    const limit = 5;
+    const limit =5;
     const offset = (page - 1) * limit;
     const debounce = _.debounce((e) => {
         setKeyword(e.target.value);

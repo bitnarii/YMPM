@@ -224,6 +224,8 @@
   width:217px;
   height:207px;
   border: 1px solid #ebe9e9;
+  object-fit: scale-down;
+
 
 
 }
