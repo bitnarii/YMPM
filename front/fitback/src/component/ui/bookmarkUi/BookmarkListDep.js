@@ -23,13 +23,27 @@ function BookmarkListDep ({book, check, setCheck}) {
                 // eslint-disable-next-line no-restricted-globals
                 location.reload(),
                 axios.put(`http://localhost:8080/dailyLook/put/${bookList.id}`,{
-                    bookmark : 0,                    
                     id : bookList.id,
                     dailyLookName : bookList.dailyLookName,
-                    description : bookList.description,
-                    fileName : bookList.fileName,
+                    style : bookList.style,
                     filePath : bookList.filePath,
-                    createDate : bookList.createDate
+                    fileName : bookList.fileName,
+                    fileOrigin : bookList.fileOrigin,
+                    category : bookList.category,
+                    description : bookList.description,
+                    bookmark : 0,
+                    topBrand : bookList.topBrand,
+                    topName : bookList.topName,
+                    bottomBrand : bookList.bottomBrand,
+                    bottomName : bookList.bottomName,
+                    dressBrand : bookList.dressBrand,
+                    dressName : bookList.dressName,
+                    outerBrand : bookList.outerBrand,
+                    outerName : bookList.outerName,
+                    shoesBrand : bookList.shoesBrand,
+                    shoesName : bookList.shoesName,
+                    etcBrand : bookList.etcBrand,
+                    etcName : bookList.etcName
                 }),
                 console.log(bookList)
             )

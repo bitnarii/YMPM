@@ -15,8 +15,27 @@ function HotPostDep({hotpost, setCheck}) {
             }).then(
                 setCheck,   
                 axios.put(`http://localhost:8080/dailyLook/put/${hotpost.id}`,{
-                    bookmark : 1,                    
                     id : hotpost.id,
+                    dailyLookName : hotpost.dailyLookName,
+                    style : hotpost.style,
+                    filePath : hotpost.filePath,
+                    fileName : hotpost.fileName,
+                    fileOrigin : hotpost.fileOrigin,
+                    category : hotpost.category,
+                    description : hotpost.description,
+                    bookmark : 1,
+                    topBrand : hotpost.topBrand,
+                    topName : hotpost.topName,
+                    bottomBrand : hotpost.bottomBrand,
+                    bottomName : hotpost.bottomName,
+                    dressBrand : hotpost.dressBrand,
+                    dressName : hotpost.dressName,
+                    outerBrand : hotpost.outerBrand,
+                    outerName : hotpost.outerName,
+                    shoesBrand : hotpost.shoesBrand,
+                    shoesName : hotpost.shoesName,
+                    etcBrand : hotpost.etcBrand,
+                    etcName : hotpost.etcName
      
                 })
             )}
@@ -27,8 +46,27 @@ function HotPostDep({hotpost, setCheck}) {
             .then(
                 setCheck,
                 axios.put(`http://localhost:8080/dailyLook/put/${hotpost.id}`,{
-                    bookmark : 0,                    
-                    id : hotpost.id
+                    id : hotpost.id,
+                    dailyLookName : hotpost.dailyLookName,
+                    style : hotpost.style,
+                    filePath : hotpost.filePath,
+                    fileName : hotpost.fileName,
+                    fileOrigin : hotpost.fileOrigin,
+                    category : hotpost.category,
+                    description : hotpost.description,
+                    bookmark : 0,
+                    topBrand : hotpost.topBrand,
+                    topName : hotpost.topName,
+                    bottomBrand : hotpost.bottomBrand,
+                    bottomName : hotpost.bottomName,
+                    dressBrand : hotpost.dressBrand,
+                    dressName : hotpost.dressName,
+                    outerBrand : hotpost.outerBrand,
+                    outerName : hotpost.outerName,
+                    shoesBrand : hotpost.shoesBrand,
+                    shoesName : hotpost.shoesName,
+                    etcBrand : hotpost.etcBrand,
+                    etcName : hotpost.etcName
  
      
                 }),            
