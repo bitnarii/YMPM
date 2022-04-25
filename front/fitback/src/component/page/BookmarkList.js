@@ -23,17 +23,16 @@ function BookmarkList() {
     },[check])
 
     return (
-        <>        
-            {/* TXT */}
-            <div id="u959" class="ax_default heading_2">
-                <div id="u959_div" class=""></div>
-                <div id="u959_text" class="text ">
-                <p><span>나의 북마크</span></p>
-                </div>
-            </div>      
-
-            {/* 북마크 조회 */}
-            <Container id="wrapper" style={{marginTop : "200px", display: "flex", flexDirection: "row"}}>
+        <Container>  
+            <Row style={{marginTop : "150px"}}>    
+            {/* "나의 북마크" txt */}
+          <p style={{fontWeight:"700", 
+  fontStyle:"normal",
+  fontSize:"28px"}}>나의 북마크</p>
+                 
+            </Row>  
+            <Row> 
+            <Container id="wrapper" style={{marginTop : "30px", display: "flex", flexDirection: "row"}}>
                 <Row>                            
                         {
                             bookmarkList.slice(offset, offset + limit).map(book => (
@@ -56,7 +55,9 @@ function BookmarkList() {
             page={page}
             setPage={setPage}
             />
-        </>
+             </Row> 
+        </Container>
+
     );
 }
 

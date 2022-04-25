@@ -40,28 +40,38 @@ function SearchResult() {
     }
 
     return ( 
-        <>            
-            {/* 검색어 입력 INPUT */}
-            <div id="u868" class="ax_default text_field">
-                <div id="u868_div" class=""></div>
-                <input onChange={debounce} id="u868_input" type="text"  class="u868_input" name="keyword"  />
+        <Container style={{height : "1300px"}}>
+        <Row style={{padding : "180px 150px 50px 150px" }}>
+            <Col style={{width : "600px", display: "flex", justifyContent : "center"}}>
+             
+                <div style={{display : "flex", flexDirection: "row"}}>
+
+
+                 <div >
+                <input style={{height : "30px", width : "500px" }} onChange={debounce}  type="text" name="keyword"/>
             </div>
 
-            {/* 검색버튼 */}
-            <div id="u869" class="ax_default primary_button " >
-                <p><button  onClick = {buttonClick} style={{backgroundColor : "white", padding : "3px 20px 1px 20px", borderColor : "white" } } >검색</button></p>
+            
+              {/* BUTTON */}
+              <div>
+               <button style={{backgroundColor : "white", borderColor : "white" , margin : "0px", height : "30px"}} onClick = {buttonClick} >
+               <p style={{color : "black", textDecoration : "none" , padding : "0 10px"}}>검색</p></button>
             </div>
+            </div>
+            </Col>
+            </Row>
+            <Row>
 
             {/* TXT */}
-            <div id="u915" class="ax_default heading_2">
-                <div id="u915_div" class=""></div>
-                <div id="u915_text" class="text ">
-                <p><span>검색결과</span></p>            
-                </div>
-            </div>
+         
+           
+                    <p style={{fontSize:"13px"}}><span style={{fontSize:"20px"}}>검색결과 </span></p> 
+       
+         
+            </Row>
+            <Row>
 
-            {/*검색결과 조회*/}
-            <Container id="wrapper" style={{marginTop : "200px", display: "flex", flexDirection: "row"}}>
+            <Container id="wrapper" style={{marginTop : "30px", display: "flex", flexDirection: "row"}}>
                 <Row>                  
                 {
                     searchList.slice(offset, offset + limit).map(searchResult => (
@@ -77,14 +87,14 @@ function SearchResult() {
                 </Row>
             </Container>
 
-            {/* 페이지네이션 */}
             <Pagination
                 total={searchList.length}
                 limit={limit}
                 page={page}
                 setPage={setPage}
                 />
-        </>
+            </Row>
+        </Container>
     );
 }
 

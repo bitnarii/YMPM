@@ -6,14 +6,7 @@ function Footer() {
       
       <img id="u1013_img" src="images/footer/u1013.svg"/>
         
-      <div id="u1014" class="ax_default paragraph">
-        <div id="u1014_text" class="text ">
-          <span >&nbsp;YMPM<br></br></span><span >
-            권빛나리(sakaki9157@gmail.com)</span><span >
-            곽다은(bbibibbibi22@gmail.com)<br></br></span><span >
-            신효원(projectann215@gmail.com)</span>
-        </div>
-      </div>
+
 
       <div id="u1015" class="ax_default paragraph">
         <div id="u1015_text" class="text ">
@@ -27,11 +20,21 @@ function Footer() {
         </div>
       </div>
 
-      <div id="u1017" class="ax_default paragraph">
+      {/* <div id="u1017" class="ax_default paragraph">
         <div id="u1017_text" class="text ">
           <span>About Us</span>
         </div>
       </div>
+
+      <div id="u1014" class="ax_default paragraph">
+        <div id="u1014_text" class="text ">
+          <span >&nbsp;YMPM<br></br></span><span >
+            권빛나리(sakaki9157@gmail.com)</span><span >
+            곽다은(bbibibbibi22@gmail.com)<br></br></span><span >
+            신효원(projectann215@gmail.com)</span>
+        </div>
+      </div> */}
+
     </div>
      );
 }

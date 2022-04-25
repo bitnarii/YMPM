@@ -14,7 +14,7 @@ function HotPost() {
     const [hotpostList, sethotpostList] = useState([]);
     const [check, setCheck] = useState(false)  
     const [page, setPage] = useState(1);
-    const limit = 5;
+    const limit = 10;
     const offset = (page - 1) * limit;
 
     const [keyword, setKeyword] = useState('')
@@ -34,29 +34,36 @@ function HotPost() {
 
 
     return ( 
-        <>
-          {/* 검색어 입력 INPUT */}
-          <div id="u868" class="ax_default text_field">
-                <div id="u868_div" class=""></div>
-                <input onChange={debounce} id="u868_input" type="text"  class="u868_input" name="keyword"/>
-            </div>
+        <Container style={{height : "1300px"}}>
+            <Row style={{padding : "180px 150px 50px 150px" }}>
+                <Col style={{width : "600px", display: "flex", justifyContent : "center"}}>
+                  
+                    <div style={{display : "flex", flexDirection: "row"}}>
 
-            {/* 검색버튼 */}
-            <div id="u869" class="ax_default primary_button " >
-                <p><button style={{backgroundColor : "white", padding : "3px 0px 1px 0px", borderColor : "white" }} >
-                <Link to='/searchresult' state={{ keyword: keyword}} style={{color : "black", textDecoration : "none" , padding : "0 20px"}}> 검색</Link></button></p>
+    
+            <div >
+                <input style={{height : "30px", width : "500px" }} onChange={debounce}  type="text" name="keyword"/>
             </div>
-
-            {/* TXT */}
-            <div id="u911" class="ax_default heading_2">
-                <div id="u911_div" class=""></div>
-                <div id="u911_text" class="text ">
+   
+            {/* BUTTON */}
+            <div>
+               <button style={{backgroundColor : "white", borderColor : "white" , margin : "0px", height : "30px"}} >
+                <Link to='/searchresult' state={{ keyword: keyword}} style={{color : "black", textDecoration : "none" , padding : "0 10px"}}> 검색</Link></button>
+            </div>
+            </div>
+            </Col>
+            
+            </Row>
+            <Row>
+            {/* "최신글" txt */}
+            <div>
                     <p style={{fontSize:"13px"}}><span style={{fontSize:"20px"}}>최신글 </span></p> 
-                </div>
+              
             </div>
-
-            {/* 게시글 둘러보기 */}
-            <Container id="wrapper" style={{ marginTop : "200px", display: "flex", flexDirection: "row"}}>
+            </Row>
+            <Row>
+            {/* <Container style={{marginTop : "200px"}}> */}
+            <Container id="wrapper" style={{ marginTop : "30px", display: "flex", flexDirection: "row"}}>
                 <Row>               
                     {
                         hotpostList.slice(offset, offset + limit).map(hotpost => (
@@ -77,7 +84,9 @@ function HotPost() {
                 limit={limit}
                 page={page}
                 setPage={setPage} />
-        </>
+        </Row>
+        </Container>
+
     );
 }
 
