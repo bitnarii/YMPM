@@ -18,4 +18,6 @@ public interface DailyLookService {
     DailyLook editDailyLook(Long id, DailyLook dailyLook, MultipartFile orgFile) throws IOException;
     public String getByIdItemImgPath(Long id);
     List<DailyLookDto> searchPosts(String keyword);
+    DailyLook editDailyLook(DailyLook dailyLook);
+
 }

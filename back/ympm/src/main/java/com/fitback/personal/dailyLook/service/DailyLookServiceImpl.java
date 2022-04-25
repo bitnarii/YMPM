@@ -112,6 +112,11 @@ public class DailyLookServiceImpl implements DailyLookService{
         return dailyLookRepository.save(dailyLook);
     }
 
+    @Override
+    public DailyLook editDailyLook(DailyLook dailyLook) {
+        return dailyLookRepository.save(dailyLook);
+    }
+
     private DailyLookDto convertEntityToDto(DailyLook dailyLook) {
         return DailyLookDto.builder()
                 .id(dailyLook.getId())
@@ -142,5 +147,7 @@ public class DailyLookServiceImpl implements DailyLookService{
         DailyLook dailyLook = dailyLookRepository.findById(id).get();
         return dailyLook.getFilePath();
     }
+
+
 }
 

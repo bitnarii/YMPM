@@ -77,4 +77,10 @@ public class DailyLookController {
         return imageByteArray;
     }
 
+
+    @PutMapping("dailyLook/put/{id}")
+    public DailyLook editDailyLook(@PathVariable Long id, @RequestBody DailyLook dailyLook){
+        return dailyLookService.editDailyLook(dailyLook);
+    }
+
 }

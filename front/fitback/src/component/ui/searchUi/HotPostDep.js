@@ -17,11 +17,7 @@ function HotPostDep({hotpost, setCheck}) {
                 axios.put(`http://localhost:8080/dailyLook/put/${hotpost.id}`,{
                     bookmark : 1,                    
                     id : hotpost.id,
-                    dailyLookName : hotpost.dailyLookName,
-                    description : hotpost.description,
-                    fileName : hotpost.fileName,
-                    filePath : hotpost.filePath,
-                    createDate : hotpost.createDate
+     
                 })
             )}
             
@@ -32,12 +28,9 @@ function HotPostDep({hotpost, setCheck}) {
                 setCheck,
                 axios.put(`http://localhost:8080/dailyLook/put/${hotpost.id}`,{
                     bookmark : 0,                    
-                    id : hotpost.id,
-                    dailyLookName : hotpost.dailyLookName,
-                    description : hotpost.description,
-                    fileName : hotpost.fileName,
-                    filePath : hotpost.filePath,
-                    createDate : hotpost.createDate
+                    id : hotpost.id
+ 
+     
                 }),            
                 Response =>{
                     console.log(Response)
