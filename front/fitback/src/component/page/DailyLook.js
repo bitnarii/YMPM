@@ -260,13 +260,13 @@ const deleteDailyLook = (e) => {
   <Badge style={{ position: "absolute", marginLeft: "490px", marginTop: "                                                                                                                                                                                                                                 0px"}} bg="black">Daily Record</Badge>
 </h3>
 
-  <InputGroup style={{position:"absolute", marginTop: "35px", marginLeft: "328px", width: "500px", height: "200px", zIndex: "1"}}>
+  <InputGroup style={{position:"absolute", marginTop: "35px", marginLeft: "328px", width: "500px", height: "150px", zIndex: "1"}}>
     <FormControl as="textarea" aria-label="With textarea" name="description" type="text" onChange={onChange} value={inputs.description}/>
   </InputGroup>
 
         <div style={{float: "left"}}>
-            <Button onClick={editDailyLook} style={{backgroundColor: "black", border: "black", color: "white", marginLeft: "525px", marginTop: "236px"}}>수정하기</Button>        
-            <Button onClick={deleteDailyLook} style={{backgroundColor: "black", border: "black", color: "white", marginLeft: "525px", marginTop: "1px"}}>삭제하기</Button>        
+            <Button onClick={editDailyLook} style={{backgroundColor: "black", border: "black", color: "white", marginLeft: "400px", marginTop: "190px"}}>수정하기</Button>        
+            <Button onClick={deleteDailyLook} style={{backgroundColor: "black", border: "black", color: "white", marginLeft: "650px", marginTop: "-65px"}}>삭제하기</Button>        
         </div>
 
     </Col>
