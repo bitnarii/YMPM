@@ -2,11 +2,8 @@ import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { Button, Card, Col, Row, Container, FormControl, InputGroup, Table, Badge, ListGroup } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
-<<<<<<< Updated upstream
-=======
 import NewOpinion from "../ui/opinionUi/NewOpinion";
 import Opinion from "../ui/opinionUi/Opinion";
->>>>>>> Stashed changes
 
 function DailyLook() {
 
