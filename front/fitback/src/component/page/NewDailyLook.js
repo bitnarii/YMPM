@@ -84,7 +84,11 @@ function NewDailyLook() {
     <Row>
     <Col>
           
+<<<<<<< Updated upstream
     <Card style={{ width: '20rem', marginTop: "200px", position: "absolute"}}>
+=======
+    <Card style={{marginLeft:"50px", width: '20rem', marginTop: "200px", position: "absolute"}}>
+>>>>>>> Stashed changes
         <Card.Img style={{height: "615px"}} variant="top" src={previewImg ? previewImg : "https://ualr.edu/elearning/files/2020/10/No-Photo-Available-924x1155.jpg"} />
         <Card.Body>
         <Button onClick={handleClick} variant="primary" style={{marginLeft: "175px", backgroundColor: "black", border: "black", color: "white"}}>사진 업로드</Button>
@@ -140,38 +144,68 @@ function NewDailyLook() {
   <tbody id="table1" >
     <tr>
       <td>상의</td>
+<<<<<<< Updated upstream
       <td><input ref={topBrand} name="topBrand" type="text" style={{border: "black"}}/></td>
       <td><input ref={topName}  name="topName" type="text" style={{border: "black"}}/></td> 
+=======
+      <td><input ref={topBrand} name="topBrand" type="text" style={{backgroundColor: "transparent",border: "black"}}/></td>
+      <td><input ref={topName}  name="topName" type="text" style={{backgroundColor: "transparent",border: "black"}}/></td> 
+>>>>>>> Stashed changes
     </tr>
 
     <tr>
     <td>하의</td>
+<<<<<<< Updated upstream
       <td><input ref={bottomBrand} name="bottomBrand" type="text" style={{border: "black"}}/></td>
       <td><input ref={bottomName} name="bottomName" type="text"  style={{border: "black"}}/></td>
+=======
+      <td><input ref={bottomBrand} name="bottomBrand" type="text" style={{backgroundColor: "transparent",border: "black"}}/></td>
+      <td><input ref={bottomName} name="bottomName" type="text"  style={{backgroundColor: "transparent",border: "black"}}/></td>
+>>>>>>> Stashed changes
     </tr>
 
     <tr>
     <td>원피스</td>
+<<<<<<< Updated upstream
       <td><input ref={dressBrand}  name="dressBrand" type="text" style={{border: "black"}}/></td>
       <td><input ref={dressName} name="dressName" type="text" style={{border: "black"}}/></td>
+=======
+      <td><input ref={dressBrand}  name="dressBrand" type="text" style={{backgroundColor: "transparent",border: "black"}}/></td>
+      <td><input ref={dressName} name="dressName" type="text" style={{backgroundColor: "transparent",border: "black"}}/></td>
+>>>>>>> Stashed changes
     </tr>
 
     <tr>
     <td>아우터</td>
+<<<<<<< Updated upstream
       <td><input ref={outerBrand} name="outerBrand" type="text" style={{border: "black"}}/></td>
       <td><input ref={outerName} name="outerName" type="text" style={{border: "black"}}/></td>
+=======
+      <td><input ref={outerBrand} name="outerBrand" type="text" style={{backgroundColor: "transparent",border: "black"}}/></td>
+      <td><input ref={outerName} name="outerName" type="text" style={{backgroundColor: "transparent",border: "black"}}/></td>
+>>>>>>> Stashed changes
     </tr>
 
     <tr>
     <td>신발</td>
+<<<<<<< Updated upstream
       <td><input  ref={shoesBrand} name="shoesBrand" type="text" style={{border: "black"}}/></td>
       <td><input ref={shoesName} name="shoesName" type="text" style={{border: "black"}}/></td>
+=======
+      <td><input  ref={shoesBrand} name="shoesBrand" type="text" style={{backgroundColor: "transparent",border: "black"}}/></td>
+      <td><input ref={shoesName} name="shoesName" type="text" style={{backgroundColor: "transparent",border: "black"}}/></td>
+>>>>>>> Stashed changes
     </tr>
 
     <tr>
     <td>패션잡화</td>
+<<<<<<< Updated upstream
       <td><input name="etcBrand" ref={etcBrand} type="text" style={{border: "black"}}/></td>
       <td><input name="etcName" ref={etcName} type="text" style={{border: "black"}}/></td>
+=======
+      <td><input name="etcBrand" ref={etcBrand} type="text" style={{backgroundColor: "transparent",border: "black"}}/></td>
+      <td><input name="etcName" ref={etcName} type="text" style={{backgroundColor: "transparent",border: "black"}}/></td>
+>>>>>>> Stashed changes
     </tr>
 
   </tbody>
@@ -181,7 +215,11 @@ function NewDailyLook() {
   <Badge style={{ marginLeft: "490px", marginTop: "0px"}} bg="black">Daily Record</Badge>
 </h3>
 
+<<<<<<< Updated upstream
   <InputGroup style={{position:"absolute", marginTop: "35px", marginLeft: "328px", width: "500px", height: "200px", zIndex: "1"}}>
+=======
+  <InputGroup style={{position:"absolute", marginTop: "35px", marginLeft: "328px", width: "500px", height: "195px", zIndex: "1"}}>
+>>>>>>> Stashed changes
     <FormControl as="textarea" aria-label="With textarea" name="description" ref={description}/>
   </InputGroup>
   <button onClick={addDailyLook} style={{height: "33px", marginLeft: "473px", marginTop: "237px", backgroundColor: "black", color: "white", borderRadius: "5px"}}>오늘의 데일리룩 등록하기</button>
