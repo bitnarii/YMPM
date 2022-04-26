@@ -23,7 +23,7 @@ function BookMarkDep({book, check, setCheck}) {
         <Row>
             <Col>
                 <div >
-                <img id="u243_img" className="img " src = {`images/imgtest/${bookList.filePath}`}   alt=""/>
+                <img id="u243_img" className="img " src = {`http://localhost:8080/image/${book.id}`}   alt=""/>
                     <div id="u243_text" className="text " >
                         <p>{bookList.dailyLookName}</p>
                     </div>

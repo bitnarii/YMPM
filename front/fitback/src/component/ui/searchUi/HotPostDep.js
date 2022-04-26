@@ -84,7 +84,7 @@ function HotPostDep({hotpost, setCheck}) {
                 <Row >
                     <Col>
                         <div id="u891" class="ax_default image">
-                            <img src = {`images/imgtest/${hotpost.filePath}`} id="u891_img" class="img" />
+                            <img src = {`http://localhost:8080/image/${hotpost.id}`} id="u891_img" class="img" />
                                 <div id="u891_text" class="text " >
                                     <p></p>
                                 </div>

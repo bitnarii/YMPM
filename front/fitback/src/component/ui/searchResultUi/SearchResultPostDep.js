@@ -68,7 +68,7 @@ function SearchResultPostDep({searchResult, setCheck}) {
             <Row>
                 <Col>
                     <div id="u914" class="ax_default image">
-                        <img src = {`images/imgtest/${searchResult.filePath}`}id="u914_img" class="img " />
+                        <img src = {`http://localhost:8080/image/${searchResult.id}`} id="u914_img" class="img " />
                             <div id="u914_text" class="text " >
                                 <p></p>
                             </div>

@@ -59,7 +59,7 @@ function BookmarkListDep ({book, check, setCheck}) {
             <Row>
                 <Col>
                     <div id="u891" class="ax_default image">
-                        <img src = {`images/imgtest/${bookList.filePath}`} id="u891_img" class="img" alt=""/>
+                        <img src = {`http://localhost:8080/image/${bookList.id}`} id="u891_img" class="img" alt=""/>
                             <div id="u891_text" class="text " >
                                 <p></p>
                             </div>
