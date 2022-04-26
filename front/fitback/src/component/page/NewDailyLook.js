@@ -81,6 +81,7 @@ function NewDailyLook() {
     return ( 
       <>
    <Container style={{margin: "auto", width: "100%", display: "flex"}}>    
+   <h1 style={{marginTop:"100px", marginLeft: "550px", position:"absolute"}}>New DailyLook</h1>
     <Row>
     <Col>
           
