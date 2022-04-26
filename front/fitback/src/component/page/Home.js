@@ -5,6 +5,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import '../../../node_modules/@fullcalendar/common/main.css';
 import { Link } from "react-router-dom";
+import BookMark from "../ui/homeUi/BookMark";
 
 function Home() {
 
@@ -136,6 +137,22 @@ function Home() {
             {/* 북마크 */}
             <Card style={{width: "390px", height: "320px",marginLeft: "65px", marginTop: "10px"}}>
             <FormControl value="북마크" style={{textAlign: "center", marginLeft: "29px", marginTop: "20px", height: "25px", width: "300px", borderLeft: "transparent", borderRight: "transparent"}}/>
+            <Card.Body style={{marginLeft: "-7px"}}>
+            <BookMark/>
+               {/* 북마크페이지 바로가기 */}
+               
+               <div  className="ax_default button">
+                        <Link to = 'bookmarklist' >
+                        <div style={{margin : ""}}>
+                           <button style={{marginTop : "115px", backgroundColor : "black", padding : "3px 50px"  }}> <p style={{color : "white",textDecoration : "none", padding : "0px", margin : "0px" }}><span >자세히 보기</span></p></button>
+                        </div></Link>
+                    </div>
+            </Card.Body>
+            </Card> 
+
+            {/* 북마크
+            <Card style={{width: "390px", height: "320px",marginLeft: "65px", marginTop: "10px"}}>
+            <FormControl value="북마크" style={{textAlign: "center", marginLeft: "29px", marginTop: "20px", height: "25px", width: "300px", borderLeft: "transparent", borderRight: "transparent"}}/>
             <Card.Body style={{marginLeft: "20px"}}>
                 <img style={{width: "130px"}} src="" alt="" />
                 <img alt="" />
@@ -143,7 +160,8 @@ function Home() {
                 <img alt="" />
                 <img alt="" />
             </Card.Body>
-            </Card> 
+            </Card>  */}
+
             {/* 내게 달린 댓글 모음 */}
             <Card style={{marginLeft: "470px", marginTop: "10px", position: "absolute", width: "390px", height: "320px"}}>
             <FormControl value="내게 달린 댓글 모음" style={{textAlign: "center", marginLeft: "29px", marginTop: "20px", height: "25px", width: "300px", borderLeft: "transparent", borderRight: "transparent"}}/>

@@ -7,15 +7,15 @@ function Header() {
 
 <div style = {{display : "flex", justifyContent : "left" , backgroundColor : "black", width : "100vw"}}>
 <nav class="navbar navbar-expand-sm navbar-light bg-black">
-<Link to='/'><a class="navbar-brand" style={{color : "white", fontSize : "20pt"}} href="#">　FitBack　　</a></Link>
+<Link to='/' style={{textDecoration : "none"}}><a class="navbar-brand" style={{color : "white", fontSize : "20pt"}} href="#">　FitBack　　</a></Link>
 
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <Link to='/'><a class="nav-link" href="#" style={{color : "white"}}>My DailyLook <span class="sr-only"></span></a></Link>
+        <Link to='/' style={{textDecoration : "none"}}><a class="nav-link" href="#" style={{color : "white"}}>My DailyLook <span class="sr-only"></span></a></Link>
       </li>
       <li class="nav-item">
-      <Link to='/search'><a class="nav-link" href="#"style={{color : "white"}}>Look Around</a></Link>
+      <Link to='/search' style={{textDecoration : "none"}}><a class="nav-link" href="#"style={{color : "white"}}>Look Around</a></Link>
       </li>
 
     </ul>

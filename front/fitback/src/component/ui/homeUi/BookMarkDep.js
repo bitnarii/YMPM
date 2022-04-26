@@ -22,7 +22,7 @@ function BookMarkDep({book, check, setCheck}) {
     <Container style={{position : "relative"}}>
         <Row>
             <Col>
-                <div id="u243" className="ax_default placeholder">
+                <div >
                 <img id="u243_img" className="img " src = {`images/imgtest/${bookList.filePath}`}   alt=""/>
                     <div id="u243_text" className="text " >
                         <p>{bookList.dailyLookName}</p>
