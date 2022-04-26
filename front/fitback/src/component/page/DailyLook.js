@@ -160,20 +160,12 @@ const deleteDailyLook = (e) => {
     return ( 
     <>
     <Container style={{margin: "auto", width: "100%", display: "flex"}}>    
-<<<<<<< Updated upstream
-     <h1 style={{marginTop:"100px", marginLeft: "490px", position:"absolute"}}>DailyLook</h1>
-=======
      <h1 style={{marginTop:"100px", marginLeft: "600px", position:"absolute"}}>DailyLook</h1>
->>>>>>> Stashed changes
     <Row>
       
     <Col>
          
-<<<<<<< Updated upstream
-    <Card style={{ width: '20rem', marginTop: "200px", position: "absolute"}}>
-=======
     <Card style={{ marginLeft:"150px", width: '20rem', marginTop: "200px", position: "absolute"}}>
->>>>>>> Stashed changes
         <Card.Img style={{height: "615px"}} variant="top" src={previewImg ? previewImg : photo} />
         <Card.Body>
         <Button variant="primary" style={{marginLeft: "175px", backgroundColor: "black", border: "black", color: "white"} } onClick={handleClick}>사진 업로드</Button>
@@ -194,11 +186,7 @@ const deleteDailyLook = (e) => {
     
     <InputGroup style={{width: "400px", marginLeft: "370px", marginTop: "200px", position: "absolute"}}>
         <FormControl value="데일리룩 제목" style={{border: "transparent"}}/>
-<<<<<<< Updated upstream
-        <FormControl  type="text" style={{borderLeft: "transparent", borderRight: "transparent"}} onChange={onChange} value={inputs.dailyLookName}/>
-=======
         <FormControl name="dailyLookName"  type="text" style={{borderLeft: "transparent", borderRight: "transparent"}} onChange={onChange} value={inputs.dailyLookName}/>
->>>>>>> Stashed changes
     </InputGroup>
     <InputGroup style={{width: "400px", marginLeft: "370px", marginTop: "240px", position: "absolute"}}>
         <FormControl value="   카테고리" name="style" style={{border: "transparent", borderRight: "transparent"}}  />
@@ -234,68 +222,38 @@ const deleteDailyLook = (e) => {
   <tbody>
     <tr>
       <td>상의</td>
-<<<<<<< Updated upstream
-      <td><input  type="text" style={{border: "black"}}  name="topBrand" onChange={onChange} value={inputs.topBrand}/></td>
-      <td><input  type="text" style={{border: "black"}} name="topName" onChange={onChange} value={inputs.topName}/></td> 
-=======
       <td><input  type="text" style={{backgroundColor: "transparent", border: "black"}}  name="topBrand" onChange={onChange} value={inputs.topBrand}/></td>
       <td><input  type="text" style={{backgroundColor: "transparent",  border: "black"}} name="topName" onChange={onChange} value={inputs.topName}/></td> 
->>>>>>> Stashed changes
     </tr>
 
     <tr>
     <td>하의</td>
-<<<<<<< Updated upstream
-      <td><input  type="text" style={{border: "black"}} name="bottomBrand" onChange={onChange} value={inputs.bottomBrand}/></td>
-      <td><input  type="text" style={{border: "black"}} name="bottomName" onChange={onChange} value={inputs.bottomName}/></td>
-=======
       <td><input  type="text" style={{backgroundColor: "transparent", border: "black"}} name="bottomBrand" onChange={onChange} value={inputs.bottomBrand}/></td>
       <td><input  type="text" style={{backgroundColor: "transparent", border: "black"}} name="bottomName" onChange={onChange} value={inputs.bottomName}/></td>
->>>>>>> Stashed changes
     </tr>
 
     <tr>
     <td>원피스</td>
-<<<<<<< Updated upstream
-      <td><input  type="text" style={{border: "black"}} name="dressBrand" onChange={onChange} value={inputs.dressBrand}/></td>
-      <td><input  type="text" style={{border: "black"}} name="dressName" onChange={onChange} value={inputs.dressName}/></td>
-=======
       <td><input  type="text" style={{backgroundColor: "transparent", border: "black"}} name="dressBrand" onChange={onChange} value={inputs.dressBrand}/></td>
       <td><input  type="text" style={{backgroundColor: "transparent", border: "black"}} name="dressName" onChange={onChange} value={inputs.dressName}/></td>
->>>>>>> Stashed changes
     </tr>
 
     <tr>
     <td>아우터</td>
-<<<<<<< Updated upstream
-      <td><input  type="text" style={{border: "black"}} name="outerBrand" onChange={onChange} value={inputs.outerBrand}/></td>
-      <td><input  type="text" style={{border: "black"}} name="outerName" onChange={onChange} value={inputs.outerName}/></td>
-=======
       <td><input  type="text" style={{backgroundColor: "transparent", border: "black"}} name="outerBrand" onChange={onChange} value={inputs.outerBrand}/></td>
       <td><input  type="text" style={{backgroundColor: "transparent", border: "black"}} name="outerName" onChange={onChange} value={inputs.outerName}/></td>
->>>>>>> Stashed changes
     </tr>
 
     <tr>
     <td>신발</td>
-<<<<<<< Updated upstream
-      <td><input  type="text" style={{border: "black"}} name="shoesBrand" onChange={onChange} value={inputs.shoesBrand}/></td>
-      <td><input  type="text" style={{border: "black"}} name="shoesName" onChange={onChange} value={inputs.shoesName}/></td>
-=======
       <td><input  type="text" style={{backgroundColor: "transparent", border: "black"}} name="shoesBrand" onChange={onChange} value={inputs.shoesBrand}/></td>
       <td><input  type="text" style={{backgroundColor: "transparent", border: "black"}} name="shoesName" onChange={onChange} value={inputs.shoesName}/></td>
->>>>>>> Stashed changes
     </tr>
 
     <tr>
     <td>패션잡화</td>
-<<<<<<< Updated upstream
-      <td><input  type="text" style={{border: "black"}} name="etcBrand" onChange={onChange} value={inputs.etcBrand}/></td>
-      <td><input  type="text" style={{border: "black"}} name="etcName" onChange={onChange} value={inputs.etcName}/></td>
-=======
       <td><input  type="text" style={{backgroundColor: "transparent", border: "black"}} name="etcBrand" onChange={onChange} value={inputs.etcBrand}/></td>
       <td><input  type="text" style={{backgroundColor: "transparent", border: "black"}} name="etcName" onChange={onChange} value={inputs.etcName}/></td>
->>>>>>> Stashed changes
     </tr>
 
   </tbody>
@@ -322,57 +280,12 @@ const deleteDailyLook = (e) => {
 
     <Row>
       <Card style={{height: "685px", width: "20rem", marginLeft: "90px", marginTop: "200px"}}>
-<<<<<<< Updated upstream
-     <Button  style={{width: "100px", position: "absolute", marginTop: "30px", height: "30px", lineHeight:"11px", backgroundColor: "black", border: "black", color: "white"}}>댓글 쓰기</Button>
-    <InputGroup style={{marginTop: "70px"}}>
-    <FormControl aria-label="Text input with checkbox" />
-    <InputGroup.Checkbox />
-    </InputGroup>
-     
-    <InputGroup style={{marginTop: "5px"}}>
-    <FormControl aria-label="Text input with checkbox" />
-    <InputGroup.Checkbox />
-    </InputGroup>
-
-    <InputGroup style={{marginTop: "4px"}}>
-    <FormControl aria-label="Text input with checkbox" />
-    <InputGroup.Checkbox />
-    </InputGroup>
-
-    <InputGroup style={{marginTop: "5px"}}>
-    <FormControl aria-label="Text input with checkbox" />
-    <InputGroup.Checkbox />
-    </InputGroup>
-
-    <InputGroup style={{marginTop: "5px"}}>
-    <FormControl aria-label="Text input with checkbox" />
-    <InputGroup.Checkbox />
-    </InputGroup>
-
-    <Badge style={{marginTop: "20px", height: "35px", fontSize: "large"}} bg="black">Free Opinion</Badge>
-    <FormControl style={{width: "295px", marginTop: "7px", height: "55px", borderLeft: "transparent", borderRight: "transparent"}}/>
-      
-    <Badge style={{marginTop: "20px", height: "35px", fontSize: "large"}} bg="black">Recommended Item</Badge>
-      
-      <Row>
-    <img style={{width: "150px", marginTop: "45px", marginLeft: "0px"}} src="https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg" alt=""/>
-
-
-        <ListGroup style={{width: "165px", marginTop:"30px"}}>
-        <ListGroup.Item style={{border: "transparent"}}>브랜드명</ListGroup.Item>
-        <input type="text" style={{borderLeft: "transparent", borderRight: "transparent", borderColor: "#dbdbdb"}}/> 
-        <ListGroup.Item style={{border: "transparent"}}>상품명</ListGroup.Item>
-        <input type="text" style={{borderLeft: "transparent", borderRight: "transparent", borderColor: "#dbdbdb"}}/> 
-        </ListGroup>
-        </Row>
-=======
          <select value={index} onChange={onSelect} style={{position: "absolute", marginLeft: "205px"}}>
           <option value="0">댓글 쓰기</option>
           <option value="1">댓글 보기</option>
         </select>
           {index === "0" ? <NewOpinion listId={list.id} setRefreash={setRefreash}/> : null}
           {index === "1" ? <Opinion /> : null}
->>>>>>> Stashed changes
       </Card> 
     </Row>
          <Row>
