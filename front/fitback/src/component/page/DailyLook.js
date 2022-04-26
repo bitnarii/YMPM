@@ -272,7 +272,7 @@ const deleteDailyLook = (e) => {
     </Col>
     </Row>
     <h3 style={{position: "absolute", zIndex: "10"}}>
-     <Badge style={{ marginLeft: "945px", marginTop: "180px"}} bg="black">Opinion</Badge>
+     <Badge style={{ marginLeft: "1100px", marginTop: "180px"}} bg="black">Opinion</Badge>
     </h3>
 
     <Row>
