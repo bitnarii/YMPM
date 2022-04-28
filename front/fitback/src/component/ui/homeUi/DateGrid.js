@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import "../../../../node_modules/@fullcalendar/common/main.css";
+import { springbootPath } from '../../SpringbootPath';
 
 import { Link } from "react-router-dom";
 
@@ -58,13 +59,13 @@ import { Link } from "react-router-dom";
 function DateGrid() {
     const [event, setEvent] = useState();
 
-    const dailyUrl = "http://localhost:8080/dailyLook/list";
+    const dailyUrl = `${springbootPath}/dailyLook/list`;
 
     useEffect(() => {
         axios.get(dailyUrl).then((response) => {
             const arr = response.data;
             let datas = [];
-            let imageUrl = "http://localhost:8080";
+            let imageUrl = `${springbootPath}`;
             arr.forEach((element) => {
                 datas.push({
                     id: element.id,

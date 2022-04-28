@@ -1,13 +1,13 @@
 import axios from "axios";
 import React, {useEffect, useState } from "react";
 import AllItemsList from "../ui/AllItemsUi/AllItemsList";
-
+import { springbootPath } from "../SpringbootPath";
 function AllItems() {
     const [product, setProduct] = useState("");
     const [del, setDel] = useState(false);
 
     useEffect(() => {
-        axios.get("http://localhost:8080/item/getAll").then((Response) => {
+        axios.get(`${springbootPath}/item/getAll`).then((Response) => {
             setProduct(Response.data);
             // console.log(Response.data);
         });

@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Pagination from "../ui/Pagination";
+import { springbootPath } from "../SpringbootPath";
 
 function BookmarkList() {
 
@@ -15,7 +16,7 @@ function BookmarkList() {
     const offset = (page - 1) * limit;
 
     useEffect(()=> {
-        axios.get('http://localhost:8080/bookmark/getall')
+        axios.get(`${springbootPath}:8080/bookmark/getall`)
         .then(Response => {
             setBookmarkList(Response.data)
             console.log(Response.data)

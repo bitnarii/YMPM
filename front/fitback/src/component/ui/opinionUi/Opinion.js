@@ -9,6 +9,7 @@ import './Paging.css';
 import OpinionItemName from "./OpinionItemName";
 import OpinionFree from "./OpinionFree";
 import Score from "./Score";
+import { springbootPath } from '../../SpringbootPath';
 
 function Opinion() {
 
@@ -18,7 +19,7 @@ function Opinion() {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(1);
 
-  const opinionUrl = `http://localhost:8080/dailyLook/${id}`;
+  const opinionUrl = `${springbootPath}/dailyLook/${id}`;
 
   // 댓글 get 요청
   useEffect(() => {

@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { springbootPath } from '../../SpringbootPath';
 
 function Record() {
 
   const { id } = useParams();
-  const findAllDailyLook = `http://localhost:8080/dailyLook/${id}`;
+  const findAllDailyLook = `${springbootPath}/dailyLook/${id}`;
   const [list, setList] = useState([{}]);
 
   useEffect(() => {

@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import axios from 'axios';
+import { springbootPath } from '../../SpringbootPath';
 
 
 
@@ -10,12 +11,12 @@ function SearchResultPostDep({searchResult, setCheck}) {
 
     const checkState = () =>{
         if(searchResult.bookmark === 0){       
-            axios.post(`http://localhost:8080/bookmark/add`,{
+            axios.post(`${springbootPath}/bookmark/add`,{
                 dailyLookId : searchResult.id,
                 id : searchResult.id
             }).then(
                 setCheck,
-                axios.put(`http://localhost:8080/dailyLook/put/${searchResult.id}`,{
+                axios.put(`${springbootPath}/dailyLook/put/${searchResult.id}`,{
                     id : searchResult.id,
                     dailyLookName : searchResult.dailyLookName,
                     style : searchResult.style,
@@ -45,10 +46,10 @@ function SearchResultPostDep({searchResult, setCheck}) {
 
         else if(searchResult.bookmark === 1) {            
             window.confirm("삭제하시겠습니까?")
-            axios.delete(`http://localhost:8080/bookmark/delete/${searchResult.id}/`)                
+            axios.delete(`${springbootPath}/bookmark/delete/${searchResult.id}/`)                
             .then(
                 setCheck,
-                axios.put(`http://localhost:8080/dailyLook/put/${searchResult.id}`,{
+                axios.put(`${springbootPath}/dailyLook/put/${searchResult.id}`,{
                     bookmark : 0,                    
                     id : searchResult.id,
                     dailyLookName : searchResult.dailyLookName,
@@ -68,7 +69,7 @@ function SearchResultPostDep({searchResult, setCheck}) {
             <Row>
                 <Col>
                     <div id="u914" class="ax_default image">
-                        <img src = {`http://localhost:8080/image/${searchResult.id}`} id="u914_img" class="img " />
+                        <img src = {`${springbootPath}/image/${searchResult.id}`} id="u914_img" class="img " />
                             <div id="u914_text" class="text " >
                                 <p></p>
                             </div>

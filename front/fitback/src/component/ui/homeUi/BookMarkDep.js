@@ -3,14 +3,14 @@ import axios from 'axios';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-
+import { springbootPath } from '../../SpringbootPath';
 
 function BookMarkDep({book, check, setCheck}) {
 
     const [bookList, setBookList] = useState([])
 
     useEffect(()=> {
-        axios.get(`http://localhost:8080/dailyLook/${book.dailyLookId}`)
+        axios.get(`${springbootPath}/dailyLook/${book.dailyLookId}`)
         .then(Response =>{
             setBookList(Response.data)
 
@@ -23,7 +23,7 @@ function BookMarkDep({book, check, setCheck}) {
         <Row>
             <Col>
                 <div >
-                <img id="u243_img" className="img " src = {`http://localhost:8080/image/${book.id}`}   alt=""/>
+                <img id="u243_img" className="img " src = {`${springbootPath}/image/${book.id}`}   alt=""/>
                     <div id="u243_text" className="text " >
                         <p>{bookList.dailyLookName}</p>
                     </div>

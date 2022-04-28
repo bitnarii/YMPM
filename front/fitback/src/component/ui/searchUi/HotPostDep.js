@@ -3,18 +3,18 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import axios from 'axios';
-
+import { springbootPath } from '../../SpringbootPath';
 
 function HotPostDep({hotpost, setCheck}) {
 
     const checkState = () =>{        
         if(hotpost.bookmark === 0){       
-            axios.post(`http://localhost:8080/bookmark/add`,{
+            axios.post(`${springbootPath}/bookmark/add`,{
                 dailyLookId : hotpost.id,
                 id : hotpost.id
             }).then(
                 setCheck,   
-                axios.put(`http://localhost:8080/dailyLook/put/${hotpost.id}`,{
+                axios.put(`${springbootPath}/dailyLook/put/${hotpost.id}`,{
                     id : hotpost.id,
                     dailyLookName : hotpost.dailyLookName,
                     style : hotpost.style,
@@ -42,10 +42,10 @@ function HotPostDep({hotpost, setCheck}) {
             
         else if(hotpost.bookmark === 1) {
             window.confirm("삭제하시겠습니까?")
-            axios.delete(`http://localhost:8080/bookmark/delete/${hotpost.id}/`)                
+            axios.delete(`${springbootPath}/bookmark/delete/${hotpost.id}/`)                
             .then(
                 setCheck,
-                axios.put(`http://localhost:8080/dailyLook/put/${hotpost.id}`,{
+                axios.put(`${springbootPath}/dailyLook/put/${hotpost.id}`,{
                     id : hotpost.id,
                     dailyLookName : hotpost.dailyLookName,
                     style : hotpost.style,
@@ -84,7 +84,7 @@ function HotPostDep({hotpost, setCheck}) {
                 <Row >
                     <Col>
                         <div id="u891" class="ax_default image">
-                            <img src = {`http://localhost:8080/image/${hotpost.id}`} id="u891_img" class="img" />
+                            <img src = {`${springbootPath}/image/${hotpost.id}`} id="u891_img" class="img" />
                                 <div id="u891_text" class="text " >
                                     <p></p>
                                 </div>

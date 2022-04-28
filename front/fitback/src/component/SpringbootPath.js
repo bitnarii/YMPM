@@ -1,0 +1,1 @@
+export const springbootPath = "http://54.83.130.131:8080";

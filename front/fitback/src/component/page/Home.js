@@ -6,12 +6,13 @@ import React, { useEffect, useState } from "react";
 import '../../../node_modules/@fullcalendar/common/main.css';
 import { Link } from "react-router-dom";
 import BookMark from "../ui/homeUi/BookMark";
+import { springbootPath } from "../SpringbootPath";
 
 function Home() {
 
     const [event, setEvent] = useState();
 
-    const dailyUrl = 'http://localhost:8080/dailyLook/list';
+    const dailyUrl =   `${springbootPath}/dailyLook/list`;
 
     //아이템 목록으로 이동
     const handleClick = () => {
@@ -25,7 +26,7 @@ function Home() {
         .then((response) => {
             const arr = response.data;
             let datas = [];
-            let imageUrl = 'http://localhost:8080/image/';
+            let imageUrl = `${springbootPath}/image/`;
             arr.forEach(element => {
                datas.push({
                 id: element.id,

@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container'
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { springbootPath } from '../../SpringbootPath';
 
 
 function BookMark() {
@@ -13,7 +14,7 @@ function BookMark() {
   const [bookmarkList, setBookmarkList ] = useState([]);
 
   useEffect(()=> {
-      axios.get('http://localhost:8080/bookmark/getall')
+      axios.get(`${springbootPath}/bookmark/getall`)
       .then(Response => {
           setBookmarkList(Response.data)
           console.log(Response.data)

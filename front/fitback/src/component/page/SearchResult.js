@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col'
 import SearchResultPostDep from '../ui/searchResultUi/SearchResultPostDep';
 import _ from 'lodash'
 import Pagination from '../ui/Pagination';
-
+import { springbootPath } from '../SpringbootPath';
 
 function SearchResult() {
 
@@ -24,7 +24,7 @@ function SearchResult() {
     }, 300);	
 
     useEffect(() =>{
-        axios.get(`http://localhost:8080/dailyLook/searchresult?keyword=${location.state.keyword}`)
+        axios.get(`${springbootPath}/dailyLook/searchresult?keyword=${location.state.keyword}`)
         .then(Response =>{
             setSearchList(Response.data)
             console.log(Response.data)
@@ -32,7 +32,7 @@ function SearchResult() {
     }, [check])
 
     const buttonClick = () =>{
-        axios.get(`http://localhost:8080/dailyLook/searchresult?keyword=${keyword2}`)
+        axios.get(`${springbootPath}/dailyLook/searchresult?keyword=${keyword2}`)
         .then(Response =>{
             setSearchList(Response.data)
             console.log(Response.data)

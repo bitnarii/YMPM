@@ -1,15 +1,16 @@
 import axios from "axios";
 import React from "react";
+import { springbootPath } from "../../SpringbootPath";
 
 function AllItemsList({ item, del, setDel }) {
 
-    const imagePath = `http://localhost:8080/item/image/${item.id}`;
+    const imagePath = `${springbootPath}/item/image/${item.id}`;
 
     const handleDelete = (e) => {
         e.preventDefault();
         if (window.confirm("정말 삭제하시겠습니까?")) {
             axios
-                .delete(`http://localhost:8080/item/delete/${item.id}`)
+                .delete(`${springbootPath}/item/delete/${item.id}`)
                 .then(setDel(!del));
             window.alert("삭제되었습니다.")
             return window.location.href = '/allitems'; //홈화면으로 이동

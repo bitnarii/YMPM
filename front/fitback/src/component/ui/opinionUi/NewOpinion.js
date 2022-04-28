@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Button, Card, Col, Row, Container, FormControl, InputGroup, Table, Badge, ListGroup } from "react-bootstrap";
+import { springbootPath } from '../../SpringbootPath';
 
 function NewOpinion({listId}) {
 
@@ -66,7 +67,7 @@ function NewOpinion({listId}) {
       formData.append("dailyLook.id", listId);
       axios({
         method: "post",
-        url:"http://localhost:8080/opinion/add",
+        url:`${springbootPath}/opinion/add`,
         data: formData,
         headers: { "Content-Type" : "multipart/form-data" }
       })

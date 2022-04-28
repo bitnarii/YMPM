@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col'
 import Pagination from '../Pagination';
 import { Link } from 'react-router-dom';
 import _ from 'lodash'
+import { springbootPath } from '../../SpringbootPath';
 
 
 function HotPost() {
@@ -25,7 +26,7 @@ function HotPost() {
     
 
     useEffect(() =>{
-        axios.get('http://localhost:8080/dailyLook/list')
+        axios.get(`${springbootPath}/dailyLook/list`)
         .then(Response =>{
             sethotpostList(Response.data)
             console.log(Response.data)        

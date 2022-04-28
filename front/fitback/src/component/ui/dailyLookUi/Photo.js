@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
+import { springbootPath } from '../../SpringbootPath';
 
 function Photo() {
 
   const { id } = useParams();
-  const findAllDailyLook = `http://localhost:8080/dailyLook/${id}`;
+  const findAllDailyLook = `${springbootPath}/dailyLook/${id}`;
   const [list, setList] = useState([]);
 
   const photoInput = useRef();
@@ -30,7 +31,7 @@ function Photo() {
   <div>
       <div id="u603" className="ax_default box_1">
         <div id="u603_div" className="">
-        <img src={'http://localhost:8080'+ list.filePath} alt=""/>
+        <img src={`${springbootPath}`+ list.filePath} alt=""/>
         </div>
       </div>
     

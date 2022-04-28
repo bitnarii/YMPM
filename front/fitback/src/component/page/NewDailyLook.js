@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { Button, Card, Col, Row, Container, FormControl, InputGroup, Table, Badge } from "react-bootstrap";
-
+import { springbootPath } from "../SpringbootPath";
 
 function NewDailyLook() {
 
@@ -70,7 +70,7 @@ function NewDailyLook() {
       formData.append("description", description.current.value);
   axios({
     method: "post",
-    url:`http://localhost:8080/dailyLook/add`,
+    url:`${springbootPath}/dailyLook/add`,
     data: formData,
     headers: { "Content-Type" : "multipart/form-data" }
   }).then((response) => console.log("등록 성공 "+ response))

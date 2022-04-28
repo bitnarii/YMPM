@@ -2,14 +2,16 @@ import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { Button, Card, Col, Row, Container, FormControl, InputGroup, Table, Badge, ListGroup } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
+import { springbootPath } from "../SpringbootPath";
 import NewOpinion from "../ui/opinionUi/NewOpinion";
 import Opinion from "../ui/opinionUi/Opinion";
+
 
 function DailyLook() {
 
   const { id } = useParams();
 	const [refreash, setRefreash] = useState(false);
-  const findDailyLook = `http://localhost:8080/dailyLook/${id}`;
+  const findDailyLook = `${springbootPath}/dailyLook/${id}`;
   const navigate = useNavigate();
   const [list, setList] = useState({});
   const [imageSrc, setImageSrc] = useState([]);
@@ -23,7 +25,7 @@ function DailyLook() {
 
 console.log("데일리룩 게시글 아이디 " + id);
 
-const photo = `http://localhost:8080/image/${id}`;
+const photo = `${springbootPath}/image/${id}`;
 
 //사진 정보 콘솔에 보이기
 console.log("사진 " + photo);
@@ -136,7 +138,7 @@ const editDailyLook = (e) => {
   formData.append("description", inputs.description);
   axios({
     method: "put",
-    url:`http://localhost:8080/dailyLook/edit/${id}`,
+    url:`${springbootPath}/dailyLook/edit/${id}`,
     data: formData,
     headers: { "Content-Type" : "multipart/form-data" }
   }).then((response) => console.log("수정 성공 "+ response))
@@ -148,7 +150,7 @@ const editDailyLook = (e) => {
 const deleteDailyLook = (e) => {
   e.preventDefault();
   if(window.confirm("이 데일리룩을 삭제할까요?")){
-  axios.delete(`http://localhost:8080/dailyLook/remove/${id}`)
+  axios.delete(`${springbootPath}/dailyLook/remove/${id}`)
   .then((response) => console.log("삭제 성공 "+ response))
   .then(navigate('/'))  // 홈화면으로 이동
   .catch((error) => console.log(error));

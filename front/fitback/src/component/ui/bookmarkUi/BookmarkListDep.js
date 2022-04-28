@@ -3,13 +3,14 @@ import React, { useEffect,useState } from 'react';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
+import { springbootPath } from '../../SpringbootPath';
 
 function BookmarkListDep ({book, check, setCheck}) {
 
     const [bookList, setBookList] = useState([])
 
     useEffect(()=> {
-        axios.get(`http://localhost:8080/dailyLook/${book.dailyLookId}`)
+        axios.get(`${springbootPath}/dailyLook/${book.dailyLookId}`)
         .then(Response =>{
             setBookList(Response.data)
             console.log(Response.data) 
@@ -18,11 +19,11 @@ function BookmarkListDep ({book, check, setCheck}) {
 
     const handleDelete = () => {
         if(window.confirm("삭제하시겠습니까?")){
-            axios.delete(`http://localhost:8080/bookmark/delete/${book.dailyLookId}`)
+            axios.delete(`${springbootPath}/bookmark/delete/${book.dailyLookId}`)
             .then(
                 // eslint-disable-next-line no-restricted-globals
                 location.reload(),
-                axios.put(`http://localhost:8080/dailyLook/put/${bookList.id}`,{
+                axios.put(`${springbootPath}/dailyLook/put/${bookList.id}`,{
                     id : bookList.id,
                     dailyLookName : bookList.dailyLookName,
                     style : bookList.style,
@@ -59,7 +60,7 @@ function BookmarkListDep ({book, check, setCheck}) {
             <Row>
                 <Col>
                     <div id="u891" class="ax_default image">
-                        <img src = {`http://localhost:8080/image/${bookList.id}`} id="u891_img" class="img" alt=""/>
+                        <img src = {`${springbootPath}/image/${bookList.id}`} id="u891_img" class="img" alt=""/>
                             <div id="u891_text" class="text " >
                                 <p></p>
                             </div>
