@@ -32,7 +32,7 @@ public class DailyLookController {
 
     @PostMapping("/dailyLook/add")
     @ResponseStatus(HttpStatus.CREATED)
-    public DailyLook addDailyLook(DailyLook dailyLook, MultipartFile orgFile) throws IOException {
+    public DailyLook addDailyLook(DailyLook dailyLook, MultipartFile orgFile) throws Exception {
 
         return dailyLookService.addDailyLook( orgFile, dailyLook); // 저장 결과를 반환
     }
@@ -63,8 +63,9 @@ public class DailyLookController {
     }
 
     @PutMapping("dailyLook/edit/{id}")
-    public DailyLook editDailyLook(@PathVariable Long id, DailyLook dailyLook, MultipartFile orgFile) throws IOException{
-        return dailyLookService.editDailyLook(id, dailyLook, orgFile);
+    public DailyLook editDailyLook(@PathVariable Long id, DailyLook dailyLook, MultipartFile orgFile) throws Exception{
+//        return dailyLookService.editDailyLook(id, dailyLook, orgFile); // 굳이 같은 함수 두 번 안 써도 될 거 같아서 하나로 통일했습니다
+        return dailyLookService.addDailyLook(orgFile, dailyLook);
     }
 
     @GetMapping(value = "/image/{id}", produces = MediaType.IMAGE_JPEG_VALUE)

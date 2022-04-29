@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.FileInputStream;
@@ -25,7 +26,7 @@ public class ItemController {
     private final ItemService itemService;
 
     @PostMapping("/add")
-    public Item addItem(@RequestParam MultipartFile itemImg, Item item) throws Exception{ //@RequestParam = 키값 지정
+    public Item addItem(@RequestParam MultipartFile itemImg, Item item) throws IOException{ //@RequestParam = 키값 지정
         return itemService.addItem(itemImg, item); //아이템 추가
     }
 
@@ -48,7 +49,8 @@ public class ItemController {
     @GetMapping("/getImg/{id}")
     public String getByIdItemImg(@PathVariable Long id){
         Item itemVo = itemService.getByIdItem(id).get(); //item id를 이용해 아이템 객체 리턴
-        return itemVo.getItemImgPath(); //아이템의 이미지 절대경로 리턴
+        return null;
+//        return itemVo.getItemImgPath(); //아이템의 이미지 절대경로 리턴
     }
 
     @GetMapping("/getImgCat/{itemCategory}")
@@ -68,6 +70,7 @@ public class ItemController {
     public @ResponseBody byte [] getItemImage(@PathVariable Long id, HttpServletRequest request) throws IOException{
         //@ResponseBody = 비동기 처리시 사용, HttpServletRequest = Http 프로토콜의 request 정보를 서블릿에게 전달하기 위해 사용
         String imagePath = itemService.getByIdItemImgPath(id); //이미지가 저장되어 있는 (이미지 파일 포함된) 절대 경로
+        System.out.println(imagePath);
         InputStream imageStream = new FileInputStream(imagePath); //FileInputStream = 파일로부터 바이트로 입력받아, 바이트 단위로 출력할 수 있는 클래스
         byte[] imageByteArray = IOUtils.toByteArray(imageStream); //이미지 파일을 바이트 배열로 변환 (웹에서 이미지 조회 가능하도록)
         imageStream.close(); //사용 완료한 imput stream 닫아주기
