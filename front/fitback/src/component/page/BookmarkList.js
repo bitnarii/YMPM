@@ -16,7 +16,7 @@ function BookmarkList() {
     const offset = (page - 1) * limit;
 
     useEffect(()=> {
-        axios.get(`${springbootPath}:8080/bookmark/getall`)
+        axios.get(`${springbootPath}/bookmark/getall`)
         .then(Response => {
             setBookmarkList(Response.data)
             console.log(Response.data)
